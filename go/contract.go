@@ -29,11 +29,11 @@ var (
 	_ = abi.ConvertType
 )
 
-// SmtProof is an auto generated low-level Go binding around an user-defined struct.
-type SmtProof struct {
+// IStateGistProof is an auto generated low-level Go binding around an user-defined struct.
+type IStateGistProof struct {
 	Root         *big.Int
 	Existence    bool
-	Siblings     []*big.Int
+	Siblings     [64]*big.Int
 	Index        *big.Int
 	Value        *big.Int
 	AuxExistence bool
@@ -41,8 +41,8 @@ type SmtProof struct {
 	AuxValue     *big.Int
 }
 
-// SmtRootInfo is an auto generated low-level Go binding around an user-defined struct.
-type SmtRootInfo struct {
+// IStateGistRootInfo is an auto generated low-level Go binding around an user-defined struct.
+type IStateGistRootInfo struct {
 	Root                *big.Int
 	ReplacedByRoot      *big.Int
 	CreatedAtTimestamp  *big.Int
@@ -51,8 +51,8 @@ type SmtRootInfo struct {
 	ReplacedAtBlock     *big.Int
 }
 
-// StateV2StateInfo is an auto generated low-level Go binding around an user-defined struct.
-type StateV2StateInfo struct {
+// IStateStateInfo is an auto generated low-level Go binding around an user-defined struct.
+type IStateStateInfo struct {
 	Id                  *big.Int
 	State               *big.Int
 	ReplacedByState     *big.Int
@@ -64,7 +64,7 @@ type StateV2StateInfo struct {
 
 // ContractMetaData contains all meta data concerning the Contract contract.
 var ContractMetaData = &bind.MetaData{
-	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferStarted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"blockN\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"}],\"name\":\"StateUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"ID_HISTORY_RETURN_LIMIT\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"getGISTProof\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"existence\",\"type\":\"bool\"},{\"internalType\":\"uint256[]\",\"name\":\"siblings\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"auxExistence\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auxIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"auxValue\",\"type\":\"uint256\"}],\"internalType\":\"structSmt.Proof\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getGISTProofByBlock\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"existence\",\"type\":\"bool\"},{\"internalType\":\"uint256[]\",\"name\":\"siblings\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"auxExistence\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auxIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"auxValue\",\"type\":\"uint256\"}],\"internalType\":\"structSmt.Proof\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"}],\"name\":\"getGISTProofByRoot\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"existence\",\"type\":\"bool\"},{\"internalType\":\"uint256[]\",\"name\":\"siblings\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"auxExistence\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auxIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"auxValue\",\"type\":\"uint256\"}],\"internalType\":\"structSmt.Proof\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"getGISTProofByTime\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"existence\",\"type\":\"bool\"},{\"internalType\":\"uint256[]\",\"name\":\"siblings\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"auxExistence\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auxIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"auxValue\",\"type\":\"uint256\"}],\"internalType\":\"structSmt.Proof\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getGISTRoot\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"start\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"getGISTRootHistory\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByRoot\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structSmt.RootInfo[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getGISTRootHistoryLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"}],\"name\":\"getGISTRootInfo\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByRoot\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structSmt.RootInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getGISTRootInfoByBlock\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByRoot\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structSmt.RootInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"getGISTRootInfoByTime\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByRoot\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structSmt.RootInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"getStateInfoById\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByState\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structStateV2.StateInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"}],\"name\":\"getStateInfoByState\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByState\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structStateV2.StateInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"getStateInfoHistoryById\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByState\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structStateV2.StateInfo[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"getStateInfoHistoryLengthById\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getVerifier\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"idExists\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contractIStateTransitionVerifier\",\"name\":\"verifierContractAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"gistMaxDepth\",\"type\":\"uint256\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pendingOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newVerifierAddr\",\"type\":\"address\"}],\"name\":\"setVerifier\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"}],\"name\":\"stateExists\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"oldState\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"newState\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isOldStateGenesis\",\"type\":\"bool\"},{\"internalType\":\"uint256[2]\",\"name\":\"a\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2][2]\",\"name\":\"b\",\"type\":\"uint256[2][2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"c\",\"type\":\"uint256[2]\"}],\"name\":\"transitState\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferStarted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"blockN\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"}],\"name\":\"StateUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"VERSION\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"getGISTProof\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"existence\",\"type\":\"bool\"},{\"internalType\":\"uint256[64]\",\"name\":\"siblings\",\"type\":\"uint256[64]\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"auxExistence\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auxIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"auxValue\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistProof\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getGISTProofByBlock\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"existence\",\"type\":\"bool\"},{\"internalType\":\"uint256[64]\",\"name\":\"siblings\",\"type\":\"uint256[64]\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"auxExistence\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auxIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"auxValue\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistProof\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"}],\"name\":\"getGISTProofByRoot\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"existence\",\"type\":\"bool\"},{\"internalType\":\"uint256[64]\",\"name\":\"siblings\",\"type\":\"uint256[64]\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"auxExistence\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auxIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"auxValue\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistProof\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"getGISTProofByTime\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"existence\",\"type\":\"bool\"},{\"internalType\":\"uint256[64]\",\"name\":\"siblings\",\"type\":\"uint256[64]\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"auxExistence\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auxIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"auxValue\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistProof\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getGISTRoot\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"start\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"getGISTRootHistory\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByRoot\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistRootInfo[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getGISTRootHistoryLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"}],\"name\":\"getGISTRootInfo\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByRoot\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistRootInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getGISTRootInfoByBlock\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByRoot\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistRootInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"getGISTRootInfoByTime\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByRoot\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistRootInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"getStateInfoById\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByState\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIState.StateInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"}],\"name\":\"getStateInfoByIdAndState\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByState\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIState.StateInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"getStateInfoHistoryById\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByState\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIState.StateInfo[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"getStateInfoHistoryLengthById\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getVerifier\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"idExists\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contractIStateTransitionVerifier\",\"name\":\"verifierContractAddr\",\"type\":\"address\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pendingOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newVerifierAddr\",\"type\":\"address\"}],\"name\":\"setVerifier\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"}],\"name\":\"stateExists\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"oldState\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"newState\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isOldStateGenesis\",\"type\":\"bool\"},{\"internalType\":\"uint256[2]\",\"name\":\"a\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2][2]\",\"name\":\"b\",\"type\":\"uint256[2][2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"c\",\"type\":\"uint256[2]\"}],\"name\":\"transitState\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
 }
 
 // ContractABI is the input ABI used to generate the binding from.
@@ -213,49 +213,49 @@ func (_Contract *ContractTransactorRaw) Transact(opts *bind.TransactOpts, method
 	return _Contract.Contract.contract.Transact(opts, method, params...)
 }
 
-// IDHISTORYRETURNLIMIT is a free data retrieval call binding the contract method 0xeaa6b26c.
+// VERSION is a free data retrieval call binding the contract method 0xffa1ad74.
 //
-// Solidity: function ID_HISTORY_RETURN_LIMIT() view returns(uint256)
-func (_Contract *ContractCaller) IDHISTORYRETURNLIMIT(opts *bind.CallOpts) (*big.Int, error) {
+// Solidity: function VERSION() view returns(string)
+func (_Contract *ContractCaller) VERSION(opts *bind.CallOpts) (string, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "ID_HISTORY_RETURN_LIMIT")
+	err := _Contract.contract.Call(opts, &out, "VERSION")
 
 	if err != nil {
-		return *new(*big.Int), err
+		return *new(string), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+	out0 := *abi.ConvertType(out[0], new(string)).(*string)
 
 	return out0, err
 
 }
 
-// IDHISTORYRETURNLIMIT is a free data retrieval call binding the contract method 0xeaa6b26c.
+// VERSION is a free data retrieval call binding the contract method 0xffa1ad74.
 //
-// Solidity: function ID_HISTORY_RETURN_LIMIT() view returns(uint256)
-func (_Contract *ContractSession) IDHISTORYRETURNLIMIT() (*big.Int, error) {
-	return _Contract.Contract.IDHISTORYRETURNLIMIT(&_Contract.CallOpts)
+// Solidity: function VERSION() view returns(string)
+func (_Contract *ContractSession) VERSION() (string, error) {
+	return _Contract.Contract.VERSION(&_Contract.CallOpts)
 }
 
-// IDHISTORYRETURNLIMIT is a free data retrieval call binding the contract method 0xeaa6b26c.
+// VERSION is a free data retrieval call binding the contract method 0xffa1ad74.
 //
-// Solidity: function ID_HISTORY_RETURN_LIMIT() view returns(uint256)
-func (_Contract *ContractCallerSession) IDHISTORYRETURNLIMIT() (*big.Int, error) {
-	return _Contract.Contract.IDHISTORYRETURNLIMIT(&_Contract.CallOpts)
+// Solidity: function VERSION() view returns(string)
+func (_Contract *ContractCallerSession) VERSION() (string, error) {
+	return _Contract.Contract.VERSION(&_Contract.CallOpts)
 }
 
 // GetGISTProof is a free data retrieval call binding the contract method 0x3025bb8c.
 //
-// Solidity: function getGISTProof(uint256 id) view returns((uint256,bool,uint256[],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCaller) GetGISTProof(opts *bind.CallOpts, id *big.Int) (SmtProof, error) {
+// Solidity: function getGISTProof(uint256 id) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
+func (_Contract *ContractCaller) GetGISTProof(opts *bind.CallOpts, id *big.Int) (IStateGistProof, error) {
 	var out []interface{}
 	err := _Contract.contract.Call(opts, &out, "getGISTProof", id)
 
 	if err != nil {
-		return *new(SmtProof), err
+		return *new(IStateGistProof), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(SmtProof)).(*SmtProof)
+	out0 := *abi.ConvertType(out[0], new(IStateGistProof)).(*IStateGistProof)
 
 	return out0, err
 
@@ -263,30 +263,30 @@ func (_Contract *ContractCaller) GetGISTProof(opts *bind.CallOpts, id *big.Int) 
 
 // GetGISTProof is a free data retrieval call binding the contract method 0x3025bb8c.
 //
-// Solidity: function getGISTProof(uint256 id) view returns((uint256,bool,uint256[],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractSession) GetGISTProof(id *big.Int) (SmtProof, error) {
+// Solidity: function getGISTProof(uint256 id) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
+func (_Contract *ContractSession) GetGISTProof(id *big.Int) (IStateGistProof, error) {
 	return _Contract.Contract.GetGISTProof(&_Contract.CallOpts, id)
 }
 
 // GetGISTProof is a free data retrieval call binding the contract method 0x3025bb8c.
 //
-// Solidity: function getGISTProof(uint256 id) view returns((uint256,bool,uint256[],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCallerSession) GetGISTProof(id *big.Int) (SmtProof, error) {
+// Solidity: function getGISTProof(uint256 id) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
+func (_Contract *ContractCallerSession) GetGISTProof(id *big.Int) (IStateGistProof, error) {
 	return _Contract.Contract.GetGISTProof(&_Contract.CallOpts, id)
 }
 
 // GetGISTProofByBlock is a free data retrieval call binding the contract method 0x046ff140.
 //
-// Solidity: function getGISTProofByBlock(uint256 id, uint256 blockNumber) view returns((uint256,bool,uint256[],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCaller) GetGISTProofByBlock(opts *bind.CallOpts, id *big.Int, blockNumber *big.Int) (SmtProof, error) {
+// Solidity: function getGISTProofByBlock(uint256 id, uint256 blockNumber) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
+func (_Contract *ContractCaller) GetGISTProofByBlock(opts *bind.CallOpts, id *big.Int, blockNumber *big.Int) (IStateGistProof, error) {
 	var out []interface{}
 	err := _Contract.contract.Call(opts, &out, "getGISTProofByBlock", id, blockNumber)
 
 	if err != nil {
-		return *new(SmtProof), err
+		return *new(IStateGistProof), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(SmtProof)).(*SmtProof)
+	out0 := *abi.ConvertType(out[0], new(IStateGistProof)).(*IStateGistProof)
 
 	return out0, err
 
@@ -294,30 +294,30 @@ func (_Contract *ContractCaller) GetGISTProofByBlock(opts *bind.CallOpts, id *bi
 
 // GetGISTProofByBlock is a free data retrieval call binding the contract method 0x046ff140.
 //
-// Solidity: function getGISTProofByBlock(uint256 id, uint256 blockNumber) view returns((uint256,bool,uint256[],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractSession) GetGISTProofByBlock(id *big.Int, blockNumber *big.Int) (SmtProof, error) {
+// Solidity: function getGISTProofByBlock(uint256 id, uint256 blockNumber) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
+func (_Contract *ContractSession) GetGISTProofByBlock(id *big.Int, blockNumber *big.Int) (IStateGistProof, error) {
 	return _Contract.Contract.GetGISTProofByBlock(&_Contract.CallOpts, id, blockNumber)
 }
 
 // GetGISTProofByBlock is a free data retrieval call binding the contract method 0x046ff140.
 //
-// Solidity: function getGISTProofByBlock(uint256 id, uint256 blockNumber) view returns((uint256,bool,uint256[],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCallerSession) GetGISTProofByBlock(id *big.Int, blockNumber *big.Int) (SmtProof, error) {
+// Solidity: function getGISTProofByBlock(uint256 id, uint256 blockNumber) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
+func (_Contract *ContractCallerSession) GetGISTProofByBlock(id *big.Int, blockNumber *big.Int) (IStateGistProof, error) {
 	return _Contract.Contract.GetGISTProofByBlock(&_Contract.CallOpts, id, blockNumber)
 }
 
 // GetGISTProofByRoot is a free data retrieval call binding the contract method 0xe12a36c0.
 //
-// Solidity: function getGISTProofByRoot(uint256 id, uint256 root) view returns((uint256,bool,uint256[],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCaller) GetGISTProofByRoot(opts *bind.CallOpts, id *big.Int, root *big.Int) (SmtProof, error) {
+// Solidity: function getGISTProofByRoot(uint256 id, uint256 root) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
+func (_Contract *ContractCaller) GetGISTProofByRoot(opts *bind.CallOpts, id *big.Int, root *big.Int) (IStateGistProof, error) {
 	var out []interface{}
 	err := _Contract.contract.Call(opts, &out, "getGISTProofByRoot", id, root)
 
 	if err != nil {
-		return *new(SmtProof), err
+		return *new(IStateGistProof), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(SmtProof)).(*SmtProof)
+	out0 := *abi.ConvertType(out[0], new(IStateGistProof)).(*IStateGistProof)
 
 	return out0, err
 
@@ -325,30 +325,30 @@ func (_Contract *ContractCaller) GetGISTProofByRoot(opts *bind.CallOpts, id *big
 
 // GetGISTProofByRoot is a free data retrieval call binding the contract method 0xe12a36c0.
 //
-// Solidity: function getGISTProofByRoot(uint256 id, uint256 root) view returns((uint256,bool,uint256[],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractSession) GetGISTProofByRoot(id *big.Int, root *big.Int) (SmtProof, error) {
+// Solidity: function getGISTProofByRoot(uint256 id, uint256 root) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
+func (_Contract *ContractSession) GetGISTProofByRoot(id *big.Int, root *big.Int) (IStateGistProof, error) {
 	return _Contract.Contract.GetGISTProofByRoot(&_Contract.CallOpts, id, root)
 }
 
 // GetGISTProofByRoot is a free data retrieval call binding the contract method 0xe12a36c0.
 //
-// Solidity: function getGISTProofByRoot(uint256 id, uint256 root) view returns((uint256,bool,uint256[],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCallerSession) GetGISTProofByRoot(id *big.Int, root *big.Int) (SmtProof, error) {
+// Solidity: function getGISTProofByRoot(uint256 id, uint256 root) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
+func (_Contract *ContractCallerSession) GetGISTProofByRoot(id *big.Int, root *big.Int) (IStateGistProof, error) {
 	return _Contract.Contract.GetGISTProofByRoot(&_Contract.CallOpts, id, root)
 }
 
 // GetGISTProofByTime is a free data retrieval call binding the contract method 0xd51afebf.
 //
-// Solidity: function getGISTProofByTime(uint256 id, uint256 timestamp) view returns((uint256,bool,uint256[],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCaller) GetGISTProofByTime(opts *bind.CallOpts, id *big.Int, timestamp *big.Int) (SmtProof, error) {
+// Solidity: function getGISTProofByTime(uint256 id, uint256 timestamp) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
+func (_Contract *ContractCaller) GetGISTProofByTime(opts *bind.CallOpts, id *big.Int, timestamp *big.Int) (IStateGistProof, error) {
 	var out []interface{}
 	err := _Contract.contract.Call(opts, &out, "getGISTProofByTime", id, timestamp)
 
 	if err != nil {
-		return *new(SmtProof), err
+		return *new(IStateGistProof), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(SmtProof)).(*SmtProof)
+	out0 := *abi.ConvertType(out[0], new(IStateGistProof)).(*IStateGistProof)
 
 	return out0, err
 
@@ -356,15 +356,15 @@ func (_Contract *ContractCaller) GetGISTProofByTime(opts *bind.CallOpts, id *big
 
 // GetGISTProofByTime is a free data retrieval call binding the contract method 0xd51afebf.
 //
-// Solidity: function getGISTProofByTime(uint256 id, uint256 timestamp) view returns((uint256,bool,uint256[],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractSession) GetGISTProofByTime(id *big.Int, timestamp *big.Int) (SmtProof, error) {
+// Solidity: function getGISTProofByTime(uint256 id, uint256 timestamp) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
+func (_Contract *ContractSession) GetGISTProofByTime(id *big.Int, timestamp *big.Int) (IStateGistProof, error) {
 	return _Contract.Contract.GetGISTProofByTime(&_Contract.CallOpts, id, timestamp)
 }
 
 // GetGISTProofByTime is a free data retrieval call binding the contract method 0xd51afebf.
 //
-// Solidity: function getGISTProofByTime(uint256 id, uint256 timestamp) view returns((uint256,bool,uint256[],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCallerSession) GetGISTProofByTime(id *big.Int, timestamp *big.Int) (SmtProof, error) {
+// Solidity: function getGISTProofByTime(uint256 id, uint256 timestamp) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
+func (_Contract *ContractCallerSession) GetGISTProofByTime(id *big.Int, timestamp *big.Int) (IStateGistProof, error) {
 	return _Contract.Contract.GetGISTProofByTime(&_Contract.CallOpts, id, timestamp)
 }
 
@@ -402,15 +402,15 @@ func (_Contract *ContractCallerSession) GetGISTRoot() (*big.Int, error) {
 // GetGISTRootHistory is a free data retrieval call binding the contract method 0x2f7670e4.
 //
 // Solidity: function getGISTRootHistory(uint256 start, uint256 length) view returns((uint256,uint256,uint256,uint256,uint256,uint256)[])
-func (_Contract *ContractCaller) GetGISTRootHistory(opts *bind.CallOpts, start *big.Int, length *big.Int) ([]SmtRootInfo, error) {
+func (_Contract *ContractCaller) GetGISTRootHistory(opts *bind.CallOpts, start *big.Int, length *big.Int) ([]IStateGistRootInfo, error) {
 	var out []interface{}
 	err := _Contract.contract.Call(opts, &out, "getGISTRootHistory", start, length)
 
 	if err != nil {
-		return *new([]SmtRootInfo), err
+		return *new([]IStateGistRootInfo), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new([]SmtRootInfo)).(*[]SmtRootInfo)
+	out0 := *abi.ConvertType(out[0], new([]IStateGistRootInfo)).(*[]IStateGistRootInfo)
 
 	return out0, err
 
@@ -419,14 +419,14 @@ func (_Contract *ContractCaller) GetGISTRootHistory(opts *bind.CallOpts, start *
 // GetGISTRootHistory is a free data retrieval call binding the contract method 0x2f7670e4.
 //
 // Solidity: function getGISTRootHistory(uint256 start, uint256 length) view returns((uint256,uint256,uint256,uint256,uint256,uint256)[])
-func (_Contract *ContractSession) GetGISTRootHistory(start *big.Int, length *big.Int) ([]SmtRootInfo, error) {
+func (_Contract *ContractSession) GetGISTRootHistory(start *big.Int, length *big.Int) ([]IStateGistRootInfo, error) {
 	return _Contract.Contract.GetGISTRootHistory(&_Contract.CallOpts, start, length)
 }
 
 // GetGISTRootHistory is a free data retrieval call binding the contract method 0x2f7670e4.
 //
 // Solidity: function getGISTRootHistory(uint256 start, uint256 length) view returns((uint256,uint256,uint256,uint256,uint256,uint256)[])
-func (_Contract *ContractCallerSession) GetGISTRootHistory(start *big.Int, length *big.Int) ([]SmtRootInfo, error) {
+func (_Contract *ContractCallerSession) GetGISTRootHistory(start *big.Int, length *big.Int) ([]IStateGistRootInfo, error) {
 	return _Contract.Contract.GetGISTRootHistory(&_Contract.CallOpts, start, length)
 }
 
@@ -464,15 +464,15 @@ func (_Contract *ContractCallerSession) GetGISTRootHistoryLength() (*big.Int, er
 // GetGISTRootInfo is a free data retrieval call binding the contract method 0x7c1a66de.
 //
 // Solidity: function getGISTRootInfo(uint256 root) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCaller) GetGISTRootInfo(opts *bind.CallOpts, root *big.Int) (SmtRootInfo, error) {
+func (_Contract *ContractCaller) GetGISTRootInfo(opts *bind.CallOpts, root *big.Int) (IStateGistRootInfo, error) {
 	var out []interface{}
 	err := _Contract.contract.Call(opts, &out, "getGISTRootInfo", root)
 
 	if err != nil {
-		return *new(SmtRootInfo), err
+		return *new(IStateGistRootInfo), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(SmtRootInfo)).(*SmtRootInfo)
+	out0 := *abi.ConvertType(out[0], new(IStateGistRootInfo)).(*IStateGistRootInfo)
 
 	return out0, err
 
@@ -481,29 +481,29 @@ func (_Contract *ContractCaller) GetGISTRootInfo(opts *bind.CallOpts, root *big.
 // GetGISTRootInfo is a free data retrieval call binding the contract method 0x7c1a66de.
 //
 // Solidity: function getGISTRootInfo(uint256 root) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractSession) GetGISTRootInfo(root *big.Int) (SmtRootInfo, error) {
+func (_Contract *ContractSession) GetGISTRootInfo(root *big.Int) (IStateGistRootInfo, error) {
 	return _Contract.Contract.GetGISTRootInfo(&_Contract.CallOpts, root)
 }
 
 // GetGISTRootInfo is a free data retrieval call binding the contract method 0x7c1a66de.
 //
 // Solidity: function getGISTRootInfo(uint256 root) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCallerSession) GetGISTRootInfo(root *big.Int) (SmtRootInfo, error) {
+func (_Contract *ContractCallerSession) GetGISTRootInfo(root *big.Int) (IStateGistRootInfo, error) {
 	return _Contract.Contract.GetGISTRootInfo(&_Contract.CallOpts, root)
 }
 
 // GetGISTRootInfoByBlock is a free data retrieval call binding the contract method 0x5845e530.
 //
 // Solidity: function getGISTRootInfoByBlock(uint256 blockNumber) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCaller) GetGISTRootInfoByBlock(opts *bind.CallOpts, blockNumber *big.Int) (SmtRootInfo, error) {
+func (_Contract *ContractCaller) GetGISTRootInfoByBlock(opts *bind.CallOpts, blockNumber *big.Int) (IStateGistRootInfo, error) {
 	var out []interface{}
 	err := _Contract.contract.Call(opts, &out, "getGISTRootInfoByBlock", blockNumber)
 
 	if err != nil {
-		return *new(SmtRootInfo), err
+		return *new(IStateGistRootInfo), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(SmtRootInfo)).(*SmtRootInfo)
+	out0 := *abi.ConvertType(out[0], new(IStateGistRootInfo)).(*IStateGistRootInfo)
 
 	return out0, err
 
@@ -512,29 +512,29 @@ func (_Contract *ContractCaller) GetGISTRootInfoByBlock(opts *bind.CallOpts, blo
 // GetGISTRootInfoByBlock is a free data retrieval call binding the contract method 0x5845e530.
 //
 // Solidity: function getGISTRootInfoByBlock(uint256 blockNumber) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractSession) GetGISTRootInfoByBlock(blockNumber *big.Int) (SmtRootInfo, error) {
+func (_Contract *ContractSession) GetGISTRootInfoByBlock(blockNumber *big.Int) (IStateGistRootInfo, error) {
 	return _Contract.Contract.GetGISTRootInfoByBlock(&_Contract.CallOpts, blockNumber)
 }
 
 // GetGISTRootInfoByBlock is a free data retrieval call binding the contract method 0x5845e530.
 //
 // Solidity: function getGISTRootInfoByBlock(uint256 blockNumber) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCallerSession) GetGISTRootInfoByBlock(blockNumber *big.Int) (SmtRootInfo, error) {
+func (_Contract *ContractCallerSession) GetGISTRootInfoByBlock(blockNumber *big.Int) (IStateGistRootInfo, error) {
 	return _Contract.Contract.GetGISTRootInfoByBlock(&_Contract.CallOpts, blockNumber)
 }
 
 // GetGISTRootInfoByTime is a free data retrieval call binding the contract method 0x0ef6e65b.
 //
 // Solidity: function getGISTRootInfoByTime(uint256 timestamp) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCaller) GetGISTRootInfoByTime(opts *bind.CallOpts, timestamp *big.Int) (SmtRootInfo, error) {
+func (_Contract *ContractCaller) GetGISTRootInfoByTime(opts *bind.CallOpts, timestamp *big.Int) (IStateGistRootInfo, error) {
 	var out []interface{}
 	err := _Contract.contract.Call(opts, &out, "getGISTRootInfoByTime", timestamp)
 
 	if err != nil {
-		return *new(SmtRootInfo), err
+		return *new(IStateGistRootInfo), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(SmtRootInfo)).(*SmtRootInfo)
+	out0 := *abi.ConvertType(out[0], new(IStateGistRootInfo)).(*IStateGistRootInfo)
 
 	return out0, err
 
@@ -543,29 +543,29 @@ func (_Contract *ContractCaller) GetGISTRootInfoByTime(opts *bind.CallOpts, time
 // GetGISTRootInfoByTime is a free data retrieval call binding the contract method 0x0ef6e65b.
 //
 // Solidity: function getGISTRootInfoByTime(uint256 timestamp) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractSession) GetGISTRootInfoByTime(timestamp *big.Int) (SmtRootInfo, error) {
+func (_Contract *ContractSession) GetGISTRootInfoByTime(timestamp *big.Int) (IStateGistRootInfo, error) {
 	return _Contract.Contract.GetGISTRootInfoByTime(&_Contract.CallOpts, timestamp)
 }
 
 // GetGISTRootInfoByTime is a free data retrieval call binding the contract method 0x0ef6e65b.
 //
 // Solidity: function getGISTRootInfoByTime(uint256 timestamp) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCallerSession) GetGISTRootInfoByTime(timestamp *big.Int) (SmtRootInfo, error) {
+func (_Contract *ContractCallerSession) GetGISTRootInfoByTime(timestamp *big.Int) (IStateGistRootInfo, error) {
 	return _Contract.Contract.GetGISTRootInfoByTime(&_Contract.CallOpts, timestamp)
 }
 
 // GetStateInfoById is a free data retrieval call binding the contract method 0xb4bdea55.
 //
 // Solidity: function getStateInfoById(uint256 id) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCaller) GetStateInfoById(opts *bind.CallOpts, id *big.Int) (StateV2StateInfo, error) {
+func (_Contract *ContractCaller) GetStateInfoById(opts *bind.CallOpts, id *big.Int) (IStateStateInfo, error) {
 	var out []interface{}
 	err := _Contract.contract.Call(opts, &out, "getStateInfoById", id)
 
 	if err != nil {
-		return *new(StateV2StateInfo), err
+		return *new(IStateStateInfo), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(StateV2StateInfo)).(*StateV2StateInfo)
+	out0 := *abi.ConvertType(out[0], new(IStateStateInfo)).(*IStateStateInfo)
 
 	return out0, err
 
@@ -574,60 +574,60 @@ func (_Contract *ContractCaller) GetStateInfoById(opts *bind.CallOpts, id *big.I
 // GetStateInfoById is a free data retrieval call binding the contract method 0xb4bdea55.
 //
 // Solidity: function getStateInfoById(uint256 id) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractSession) GetStateInfoById(id *big.Int) (StateV2StateInfo, error) {
+func (_Contract *ContractSession) GetStateInfoById(id *big.Int) (IStateStateInfo, error) {
 	return _Contract.Contract.GetStateInfoById(&_Contract.CallOpts, id)
 }
 
 // GetStateInfoById is a free data retrieval call binding the contract method 0xb4bdea55.
 //
 // Solidity: function getStateInfoById(uint256 id) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCallerSession) GetStateInfoById(id *big.Int) (StateV2StateInfo, error) {
+func (_Contract *ContractCallerSession) GetStateInfoById(id *big.Int) (IStateStateInfo, error) {
 	return _Contract.Contract.GetStateInfoById(&_Contract.CallOpts, id)
 }
 
-// GetStateInfoByState is a free data retrieval call binding the contract method 0x3622b0bc.
+// GetStateInfoByIdAndState is a free data retrieval call binding the contract method 0x53c87312.
 //
-// Solidity: function getStateInfoByState(uint256 state) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCaller) GetStateInfoByState(opts *bind.CallOpts, state *big.Int) (StateV2StateInfo, error) {
+// Solidity: function getStateInfoByIdAndState(uint256 id, uint256 state) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
+func (_Contract *ContractCaller) GetStateInfoByIdAndState(opts *bind.CallOpts, id *big.Int, state *big.Int) (IStateStateInfo, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getStateInfoByState", state)
+	err := _Contract.contract.Call(opts, &out, "getStateInfoByIdAndState", id, state)
 
 	if err != nil {
-		return *new(StateV2StateInfo), err
+		return *new(IStateStateInfo), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(StateV2StateInfo)).(*StateV2StateInfo)
+	out0 := *abi.ConvertType(out[0], new(IStateStateInfo)).(*IStateStateInfo)
 
 	return out0, err
 
 }
 
-// GetStateInfoByState is a free data retrieval call binding the contract method 0x3622b0bc.
+// GetStateInfoByIdAndState is a free data retrieval call binding the contract method 0x53c87312.
 //
-// Solidity: function getStateInfoByState(uint256 state) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractSession) GetStateInfoByState(state *big.Int) (StateV2StateInfo, error) {
-	return _Contract.Contract.GetStateInfoByState(&_Contract.CallOpts, state)
+// Solidity: function getStateInfoByIdAndState(uint256 id, uint256 state) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
+func (_Contract *ContractSession) GetStateInfoByIdAndState(id *big.Int, state *big.Int) (IStateStateInfo, error) {
+	return _Contract.Contract.GetStateInfoByIdAndState(&_Contract.CallOpts, id, state)
 }
 
-// GetStateInfoByState is a free data retrieval call binding the contract method 0x3622b0bc.
+// GetStateInfoByIdAndState is a free data retrieval call binding the contract method 0x53c87312.
 //
-// Solidity: function getStateInfoByState(uint256 state) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCallerSession) GetStateInfoByState(state *big.Int) (StateV2StateInfo, error) {
-	return _Contract.Contract.GetStateInfoByState(&_Contract.CallOpts, state)
+// Solidity: function getStateInfoByIdAndState(uint256 id, uint256 state) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
+func (_Contract *ContractCallerSession) GetStateInfoByIdAndState(id *big.Int, state *big.Int) (IStateStateInfo, error) {
+	return _Contract.Contract.GetStateInfoByIdAndState(&_Contract.CallOpts, id, state)
 }
 
 // GetStateInfoHistoryById is a free data retrieval call binding the contract method 0xe99858fe.
 //
 // Solidity: function getStateInfoHistoryById(uint256 id, uint256 startIndex, uint256 length) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256)[])
-func (_Contract *ContractCaller) GetStateInfoHistoryById(opts *bind.CallOpts, id *big.Int, startIndex *big.Int, length *big.Int) ([]StateV2StateInfo, error) {
+func (_Contract *ContractCaller) GetStateInfoHistoryById(opts *bind.CallOpts, id *big.Int, startIndex *big.Int, length *big.Int) ([]IStateStateInfo, error) {
 	var out []interface{}
 	err := _Contract.contract.Call(opts, &out, "getStateInfoHistoryById", id, startIndex, length)
 
 	if err != nil {
-		return *new([]StateV2StateInfo), err
+		return *new([]IStateStateInfo), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new([]StateV2StateInfo)).(*[]StateV2StateInfo)
+	out0 := *abi.ConvertType(out[0], new([]IStateStateInfo)).(*[]IStateStateInfo)
 
 	return out0, err
 
@@ -636,14 +636,14 @@ func (_Contract *ContractCaller) GetStateInfoHistoryById(opts *bind.CallOpts, id
 // GetStateInfoHistoryById is a free data retrieval call binding the contract method 0xe99858fe.
 //
 // Solidity: function getStateInfoHistoryById(uint256 id, uint256 startIndex, uint256 length) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256)[])
-func (_Contract *ContractSession) GetStateInfoHistoryById(id *big.Int, startIndex *big.Int, length *big.Int) ([]StateV2StateInfo, error) {
+func (_Contract *ContractSession) GetStateInfoHistoryById(id *big.Int, startIndex *big.Int, length *big.Int) ([]IStateStateInfo, error) {
 	return _Contract.Contract.GetStateInfoHistoryById(&_Contract.CallOpts, id, startIndex, length)
 }
 
 // GetStateInfoHistoryById is a free data retrieval call binding the contract method 0xe99858fe.
 //
 // Solidity: function getStateInfoHistoryById(uint256 id, uint256 startIndex, uint256 length) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256)[])
-func (_Contract *ContractCallerSession) GetStateInfoHistoryById(id *big.Int, startIndex *big.Int, length *big.Int) ([]StateV2StateInfo, error) {
+func (_Contract *ContractCallerSession) GetStateInfoHistoryById(id *big.Int, startIndex *big.Int, length *big.Int) ([]IStateStateInfo, error) {
 	return _Contract.Contract.GetStateInfoHistoryById(&_Contract.CallOpts, id, startIndex, length)
 }
 
@@ -802,12 +802,12 @@ func (_Contract *ContractCallerSession) PendingOwner() (common.Address, error) {
 	return _Contract.Contract.PendingOwner(&_Contract.CallOpts)
 }
 
-// StateExists is a free data retrieval call binding the contract method 0x08fd3b76.
+// StateExists is a free data retrieval call binding the contract method 0x233a4d23.
 //
-// Solidity: function stateExists(uint256 state) view returns(bool)
-func (_Contract *ContractCaller) StateExists(opts *bind.CallOpts, state *big.Int) (bool, error) {
+// Solidity: function stateExists(uint256 id, uint256 state) view returns(bool)
+func (_Contract *ContractCaller) StateExists(opts *bind.CallOpts, id *big.Int, state *big.Int) (bool, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "stateExists", state)
+	err := _Contract.contract.Call(opts, &out, "stateExists", id, state)
 
 	if err != nil {
 		return *new(bool), err
@@ -819,18 +819,18 @@ func (_Contract *ContractCaller) StateExists(opts *bind.CallOpts, state *big.Int
 
 }
 
-// StateExists is a free data retrieval call binding the contract method 0x08fd3b76.
+// StateExists is a free data retrieval call binding the contract method 0x233a4d23.
 //
-// Solidity: function stateExists(uint256 state) view returns(bool)
-func (_Contract *ContractSession) StateExists(state *big.Int) (bool, error) {
-	return _Contract.Contract.StateExists(&_Contract.CallOpts, state)
+// Solidity: function stateExists(uint256 id, uint256 state) view returns(bool)
+func (_Contract *ContractSession) StateExists(id *big.Int, state *big.Int) (bool, error) {
+	return _Contract.Contract.StateExists(&_Contract.CallOpts, id, state)
 }
 
-// StateExists is a free data retrieval call binding the contract method 0x08fd3b76.
+// StateExists is a free data retrieval call binding the contract method 0x233a4d23.
 //
-// Solidity: function stateExists(uint256 state) view returns(bool)
-func (_Contract *ContractCallerSession) StateExists(state *big.Int) (bool, error) {
-	return _Contract.Contract.StateExists(&_Contract.CallOpts, state)
+// Solidity: function stateExists(uint256 id, uint256 state) view returns(bool)
+func (_Contract *ContractCallerSession) StateExists(id *big.Int, state *big.Int) (bool, error) {
+	return _Contract.Contract.StateExists(&_Contract.CallOpts, id, state)
 }
 
 // AcceptOwnership is a paid mutator transaction binding the contract method 0x79ba5097.
@@ -854,25 +854,25 @@ func (_Contract *ContractTransactorSession) AcceptOwnership() (*types.Transactio
 	return _Contract.Contract.AcceptOwnership(&_Contract.TransactOpts)
 }
 
-// Initialize is a paid mutator transaction binding the contract method 0xcd6dc687.
+// Initialize is a paid mutator transaction binding the contract method 0xc4d66de8.
 //
-// Solidity: function initialize(address verifierContractAddr, uint256 gistMaxDepth) returns()
-func (_Contract *ContractTransactor) Initialize(opts *bind.TransactOpts, verifierContractAddr common.Address, gistMaxDepth *big.Int) (*types.Transaction, error) {
-	return _Contract.contract.Transact(opts, "initialize", verifierContractAddr, gistMaxDepth)
+// Solidity: function initialize(address verifierContractAddr) returns()
+func (_Contract *ContractTransactor) Initialize(opts *bind.TransactOpts, verifierContractAddr common.Address) (*types.Transaction, error) {
+	return _Contract.contract.Transact(opts, "initialize", verifierContractAddr)
 }
 
-// Initialize is a paid mutator transaction binding the contract method 0xcd6dc687.
+// Initialize is a paid mutator transaction binding the contract method 0xc4d66de8.
 //
-// Solidity: function initialize(address verifierContractAddr, uint256 gistMaxDepth) returns()
-func (_Contract *ContractSession) Initialize(verifierContractAddr common.Address, gistMaxDepth *big.Int) (*types.Transaction, error) {
-	return _Contract.Contract.Initialize(&_Contract.TransactOpts, verifierContractAddr, gistMaxDepth)
+// Solidity: function initialize(address verifierContractAddr) returns()
+func (_Contract *ContractSession) Initialize(verifierContractAddr common.Address) (*types.Transaction, error) {
+	return _Contract.Contract.Initialize(&_Contract.TransactOpts, verifierContractAddr)
 }
 
-// Initialize is a paid mutator transaction binding the contract method 0xcd6dc687.
+// Initialize is a paid mutator transaction binding the contract method 0xc4d66de8.
 //
-// Solidity: function initialize(address verifierContractAddr, uint256 gistMaxDepth) returns()
-func (_Contract *ContractTransactorSession) Initialize(verifierContractAddr common.Address, gistMaxDepth *big.Int) (*types.Transaction, error) {
-	return _Contract.Contract.Initialize(&_Contract.TransactOpts, verifierContractAddr, gistMaxDepth)
+// Solidity: function initialize(address verifierContractAddr) returns()
+func (_Contract *ContractTransactorSession) Initialize(verifierContractAddr common.Address) (*types.Transaction, error) {
+	return _Contract.Contract.Initialize(&_Contract.TransactOpts, verifierContractAddr)
 }
 
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
