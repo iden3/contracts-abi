@@ -1,0 +1,35 @@
+#!/bin/bash
+
+set -e
+
+SOURCE_ABI_PATH=$PWD/contracts/artifacts/contracts/state/StateV2.sol
+
+# Check if `contracts` repository exists
+if [ -d "$DIRECTORY" ]; then
+	echo "$DIRECTORY does exist."
+	exit 1
+fi
+
+# Check if jq exists
+which jq 2>/dev/null || exit 1
+
+pushd $PWD/contracts
+npm i
+npm run compile
+popd
+
+touch $PWD/abi.json $PWD/bytecode $PWD/go/contract.go
+
+cat $SOURCE_ABI_PATH/StateV2.json | jq .abi >> $PWD/abi.json
+cat $SOURCE_ABI_PATH/StateV2.json | jq .bytecode >> $PWD/bytecode
+
+docker run \
+	-v $PWD/abi.json:/abi.json:ro \
+	-v $PWD/bytecode:/bytecode:ro \
+	-v $PWD/go/contract.go:/contract.go \
+	--rm --name ethereum-node \
+	ethereum/client-go:alltools-v1.11.5 \
+	abigen --abi=/abi.json --pkg=contract --out=contract.go
+
+#TODO(illia-korotia): fill free to add new generators for js, flatter and etc.
+
