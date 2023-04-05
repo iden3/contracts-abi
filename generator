@@ -38,20 +38,21 @@ npm i
 npm run compile
 popd > /dev/null
 
-touch $PWD/abi.json $PWD/bytecode $PWD/go/state.go
+touch $PWD/abi.json $PWD/bytecode $PWD/state/go/abi/abi.go
 cat $SOURCE_ABI_PATH/StateV2.json | jq .abi > $PWD/abi.json
 cat $SOURCE_ABI_PATH/StateV2.json | jq .bytecode > $PWD/bytecode
 
 docker run \
 	-v $PWD/abi.json:/abi.json:ro \
 	-v $PWD/bytecode:/bytecode:ro \
-	-v $PWD/go/state.go:/state.go \
+	-v $PWD/state/go/abi/abi.go:/state.go \
 	--rm --name ethereum-node \
 	ethereum/client-go:alltools-v1.11.5 \
-	abigen --abi=/abi.json --pkg=state_contract --out=state.go
+	abigen --abi=/abi.json --pkg=abi \
+	--out=state.go --type="State"
 
 # Sync deps
-pushd $PWD/go > /dev/null
+pushd $PWD/state/go/abi > /dev/null
 go mod tidy
 popd > /dev/null
 

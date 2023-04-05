@@ -1,4 +1,4 @@
-module github.com/iden3/contracts-abi/go
+module github.com/iden3/contracts-abi/state/go/abi
 
 go 1.19
 

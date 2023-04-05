@@ -1,4 +1,4 @@
-package state_contract
+package abi
 
 type SmtProof IStateGistProof
 type SmtRootInfo IStateGistRootInfo
