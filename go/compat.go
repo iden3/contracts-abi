@@ -1,0 +1,5 @@
+package state
+
+type SmtProof IStateGistProof
+type SmtRootInfo IStateGistRootInfo
+type StateV2StateInfo IStateStateInfo

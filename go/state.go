@@ -1,7 +1,7 @@
 // Code generated - DO NOT EDIT.
 // This file is a generated binding and any manual changes will be lost.
 
-package contract
+package state
 
 import (
 	"errors"
@@ -62,113 +62,113 @@ type IStateStateInfo struct {
 	ReplacedAtBlock     *big.Int
 }
 
-// ContractMetaData contains all meta data concerning the Contract contract.
-var ContractMetaData = &bind.MetaData{
+// StateMetaData contains all meta data concerning the State contract.
+var StateMetaData = &bind.MetaData{
 	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferStarted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"blockN\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"}],\"name\":\"StateUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"VERSION\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"getGISTProof\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"existence\",\"type\":\"bool\"},{\"internalType\":\"uint256[64]\",\"name\":\"siblings\",\"type\":\"uint256[64]\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"auxExistence\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auxIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"auxValue\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistProof\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getGISTProofByBlock\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"existence\",\"type\":\"bool\"},{\"internalType\":\"uint256[64]\",\"name\":\"siblings\",\"type\":\"uint256[64]\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"auxExistence\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auxIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"auxValue\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistProof\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"}],\"name\":\"getGISTProofByRoot\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"existence\",\"type\":\"bool\"},{\"internalType\":\"uint256[64]\",\"name\":\"siblings\",\"type\":\"uint256[64]\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"auxExistence\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auxIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"auxValue\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistProof\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"getGISTProofByTime\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"existence\",\"type\":\"bool\"},{\"internalType\":\"uint256[64]\",\"name\":\"siblings\",\"type\":\"uint256[64]\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"auxExistence\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auxIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"auxValue\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistProof\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getGISTRoot\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"start\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"getGISTRootHistory\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByRoot\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistRootInfo[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getGISTRootHistoryLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"}],\"name\":\"getGISTRootInfo\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByRoot\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistRootInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getGISTRootInfoByBlock\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByRoot\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistRootInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"getGISTRootInfoByTime\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"root\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByRoot\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIState.GistRootInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"getStateInfoById\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByState\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIState.StateInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"}],\"name\":\"getStateInfoByIdAndState\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByState\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIState.StateInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"getStateInfoHistoryById\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedByState\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"replacedAtBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIState.StateInfo[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"getStateInfoHistoryLengthById\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getVerifier\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"idExists\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contractIStateTransitionVerifier\",\"name\":\"verifierContractAddr\",\"type\":\"address\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pendingOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newVerifierAddr\",\"type\":\"address\"}],\"name\":\"setVerifier\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"}],\"name\":\"stateExists\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"oldState\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"newState\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isOldStateGenesis\",\"type\":\"bool\"},{\"internalType\":\"uint256[2]\",\"name\":\"a\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2][2]\",\"name\":\"b\",\"type\":\"uint256[2][2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"c\",\"type\":\"uint256[2]\"}],\"name\":\"transitState\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
 }
 
-// ContractABI is the input ABI used to generate the binding from.
-// Deprecated: Use ContractMetaData.ABI instead.
-var ContractABI = ContractMetaData.ABI
+// StateABI is the input ABI used to generate the binding from.
+// Deprecated: Use StateMetaData.ABI instead.
+var StateABI = StateMetaData.ABI
 
-// Contract is an auto generated Go binding around an Ethereum contract.
-type Contract struct {
-	ContractCaller     // Read-only binding to the contract
-	ContractTransactor // Write-only binding to the contract
-	ContractFilterer   // Log filterer for contract events
+// State is an auto generated Go binding around an Ethereum contract.
+type State struct {
+	StateCaller     // Read-only binding to the contract
+	StateTransactor // Write-only binding to the contract
+	StateFilterer   // Log filterer for contract events
 }
 
-// ContractCaller is an auto generated read-only Go binding around an Ethereum contract.
-type ContractCaller struct {
+// StateCaller is an auto generated read-only Go binding around an Ethereum contract.
+type StateCaller struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// ContractTransactor is an auto generated write-only Go binding around an Ethereum contract.
-type ContractTransactor struct {
+// StateTransactor is an auto generated write-only Go binding around an Ethereum contract.
+type StateTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// ContractFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
-type ContractFilterer struct {
+// StateFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
+type StateFilterer struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// ContractSession is an auto generated Go binding around an Ethereum contract,
+// StateSession is an auto generated Go binding around an Ethereum contract,
 // with pre-set call and transact options.
-type ContractSession struct {
-	Contract     *Contract         // Generic contract binding to set the session for
+type StateSession struct {
+	Contract     *State            // Generic contract binding to set the session for
 	CallOpts     bind.CallOpts     // Call options to use throughout this session
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// ContractCallerSession is an auto generated read-only Go binding around an Ethereum contract,
+// StateCallerSession is an auto generated read-only Go binding around an Ethereum contract,
 // with pre-set call options.
-type ContractCallerSession struct {
-	Contract *ContractCaller // Generic contract caller binding to set the session for
-	CallOpts bind.CallOpts   // Call options to use throughout this session
+type StateCallerSession struct {
+	Contract *StateCaller  // Generic contract caller binding to set the session for
+	CallOpts bind.CallOpts // Call options to use throughout this session
 }
 
-// ContractTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
+// StateTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
 // with pre-set transact options.
-type ContractTransactorSession struct {
-	Contract     *ContractTransactor // Generic contract transactor binding to set the session for
-	TransactOpts bind.TransactOpts   // Transaction auth options to use throughout this session
+type StateTransactorSession struct {
+	Contract     *StateTransactor  // Generic contract transactor binding to set the session for
+	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// ContractRaw is an auto generated low-level Go binding around an Ethereum contract.
-type ContractRaw struct {
-	Contract *Contract // Generic contract binding to access the raw methods on
+// StateRaw is an auto generated low-level Go binding around an Ethereum contract.
+type StateRaw struct {
+	Contract *State // Generic contract binding to access the raw methods on
 }
 
-// ContractCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
-type ContractCallerRaw struct {
-	Contract *ContractCaller // Generic read-only contract binding to access the raw methods on
+// StateCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
+type StateCallerRaw struct {
+	Contract *StateCaller // Generic read-only contract binding to access the raw methods on
 }
 
-// ContractTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
-type ContractTransactorRaw struct {
-	Contract *ContractTransactor // Generic write-only contract binding to access the raw methods on
+// StateTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
+type StateTransactorRaw struct {
+	Contract *StateTransactor // Generic write-only contract binding to access the raw methods on
 }
 
-// NewContract creates a new instance of Contract, bound to a specific deployed contract.
-func NewContract(address common.Address, backend bind.ContractBackend) (*Contract, error) {
-	contract, err := bindContract(address, backend, backend, backend)
+// NewState creates a new instance of State, bound to a specific deployed contract.
+func NewState(address common.Address, backend bind.ContractBackend) (*State, error) {
+	contract, err := bindState(address, backend, backend, backend)
 	if err != nil {
 		return nil, err
 	}
-	return &Contract{ContractCaller: ContractCaller{contract: contract}, ContractTransactor: ContractTransactor{contract: contract}, ContractFilterer: ContractFilterer{contract: contract}}, nil
+	return &State{StateCaller: StateCaller{contract: contract}, StateTransactor: StateTransactor{contract: contract}, StateFilterer: StateFilterer{contract: contract}}, nil
 }
 
-// NewContractCaller creates a new read-only instance of Contract, bound to a specific deployed contract.
-func NewContractCaller(address common.Address, caller bind.ContractCaller) (*ContractCaller, error) {
-	contract, err := bindContract(address, caller, nil, nil)
+// NewStateCaller creates a new read-only instance of State, bound to a specific deployed contract.
+func NewStateCaller(address common.Address, caller bind.ContractCaller) (*StateCaller, error) {
+	contract, err := bindState(address, caller, nil, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &ContractCaller{contract: contract}, nil
+	return &StateCaller{contract: contract}, nil
 }
 
-// NewContractTransactor creates a new write-only instance of Contract, bound to a specific deployed contract.
-func NewContractTransactor(address common.Address, transactor bind.ContractTransactor) (*ContractTransactor, error) {
-	contract, err := bindContract(address, nil, transactor, nil)
+// NewStateTransactor creates a new write-only instance of State, bound to a specific deployed contract.
+func NewStateTransactor(address common.Address, transactor bind.ContractTransactor) (*StateTransactor, error) {
+	contract, err := bindState(address, nil, transactor, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &ContractTransactor{contract: contract}, nil
+	return &StateTransactor{contract: contract}, nil
 }
 
-// NewContractFilterer creates a new log filterer instance of Contract, bound to a specific deployed contract.
-func NewContractFilterer(address common.Address, filterer bind.ContractFilterer) (*ContractFilterer, error) {
-	contract, err := bindContract(address, nil, nil, filterer)
+// NewStateFilterer creates a new log filterer instance of State, bound to a specific deployed contract.
+func NewStateFilterer(address common.Address, filterer bind.ContractFilterer) (*StateFilterer, error) {
+	contract, err := bindState(address, nil, nil, filterer)
 	if err != nil {
 		return nil, err
 	}
-	return &ContractFilterer{contract: contract}, nil
+	return &StateFilterer{contract: contract}, nil
 }
 
-// bindContract binds a generic wrapper to an already deployed contract.
-func bindContract(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := ContractMetaData.GetAbi()
+// bindState binds a generic wrapper to an already deployed contract.
+func bindState(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
+	parsed, err := StateMetaData.GetAbi()
 	if err != nil {
 		return nil, err
 	}
@@ -179,46 +179,46 @@ func bindContract(address common.Address, caller bind.ContractCaller, transactor
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_Contract *ContractRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-	return _Contract.Contract.ContractCaller.contract.Call(opts, result, method, params...)
+func (_State *StateRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _State.Contract.StateCaller.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_Contract *ContractRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Contract.Contract.ContractTransactor.contract.Transfer(opts)
+func (_State *StateRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _State.Contract.StateTransactor.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_Contract *ContractRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _Contract.Contract.ContractTransactor.contract.Transact(opts, method, params...)
+func (_State *StateRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _State.Contract.StateTransactor.contract.Transact(opts, method, params...)
 }
 
 // Call invokes the (constant) contract method with params as input values and
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_Contract *ContractCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-	return _Contract.Contract.contract.Call(opts, result, method, params...)
+func (_State *StateCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _State.Contract.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_Contract *ContractTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Contract.Contract.contract.Transfer(opts)
+func (_State *StateTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _State.Contract.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_Contract *ContractTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _Contract.Contract.contract.Transact(opts, method, params...)
+func (_State *StateTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _State.Contract.contract.Transact(opts, method, params...)
 }
 
 // VERSION is a free data retrieval call binding the contract method 0xffa1ad74.
 //
 // Solidity: function VERSION() view returns(string)
-func (_Contract *ContractCaller) VERSION(opts *bind.CallOpts) (string, error) {
+func (_State *StateCaller) VERSION(opts *bind.CallOpts) (string, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "VERSION")
+	err := _State.contract.Call(opts, &out, "VERSION")
 
 	if err != nil {
 		return *new(string), err
@@ -233,23 +233,23 @@ func (_Contract *ContractCaller) VERSION(opts *bind.CallOpts) (string, error) {
 // VERSION is a free data retrieval call binding the contract method 0xffa1ad74.
 //
 // Solidity: function VERSION() view returns(string)
-func (_Contract *ContractSession) VERSION() (string, error) {
-	return _Contract.Contract.VERSION(&_Contract.CallOpts)
+func (_State *StateSession) VERSION() (string, error) {
+	return _State.Contract.VERSION(&_State.CallOpts)
 }
 
 // VERSION is a free data retrieval call binding the contract method 0xffa1ad74.
 //
 // Solidity: function VERSION() view returns(string)
-func (_Contract *ContractCallerSession) VERSION() (string, error) {
-	return _Contract.Contract.VERSION(&_Contract.CallOpts)
+func (_State *StateCallerSession) VERSION() (string, error) {
+	return _State.Contract.VERSION(&_State.CallOpts)
 }
 
 // GetGISTProof is a free data retrieval call binding the contract method 0x3025bb8c.
 //
 // Solidity: function getGISTProof(uint256 id) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCaller) GetGISTProof(opts *bind.CallOpts, id *big.Int) (IStateGistProof, error) {
+func (_State *StateCaller) GetGISTProof(opts *bind.CallOpts, id *big.Int) (IStateGistProof, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getGISTProof", id)
+	err := _State.contract.Call(opts, &out, "getGISTProof", id)
 
 	if err != nil {
 		return *new(IStateGistProof), err
@@ -264,23 +264,23 @@ func (_Contract *ContractCaller) GetGISTProof(opts *bind.CallOpts, id *big.Int) 
 // GetGISTProof is a free data retrieval call binding the contract method 0x3025bb8c.
 //
 // Solidity: function getGISTProof(uint256 id) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractSession) GetGISTProof(id *big.Int) (IStateGistProof, error) {
-	return _Contract.Contract.GetGISTProof(&_Contract.CallOpts, id)
+func (_State *StateSession) GetGISTProof(id *big.Int) (IStateGistProof, error) {
+	return _State.Contract.GetGISTProof(&_State.CallOpts, id)
 }
 
 // GetGISTProof is a free data retrieval call binding the contract method 0x3025bb8c.
 //
 // Solidity: function getGISTProof(uint256 id) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCallerSession) GetGISTProof(id *big.Int) (IStateGistProof, error) {
-	return _Contract.Contract.GetGISTProof(&_Contract.CallOpts, id)
+func (_State *StateCallerSession) GetGISTProof(id *big.Int) (IStateGistProof, error) {
+	return _State.Contract.GetGISTProof(&_State.CallOpts, id)
 }
 
 // GetGISTProofByBlock is a free data retrieval call binding the contract method 0x046ff140.
 //
 // Solidity: function getGISTProofByBlock(uint256 id, uint256 blockNumber) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCaller) GetGISTProofByBlock(opts *bind.CallOpts, id *big.Int, blockNumber *big.Int) (IStateGistProof, error) {
+func (_State *StateCaller) GetGISTProofByBlock(opts *bind.CallOpts, id *big.Int, blockNumber *big.Int) (IStateGistProof, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getGISTProofByBlock", id, blockNumber)
+	err := _State.contract.Call(opts, &out, "getGISTProofByBlock", id, blockNumber)
 
 	if err != nil {
 		return *new(IStateGistProof), err
@@ -295,23 +295,23 @@ func (_Contract *ContractCaller) GetGISTProofByBlock(opts *bind.CallOpts, id *bi
 // GetGISTProofByBlock is a free data retrieval call binding the contract method 0x046ff140.
 //
 // Solidity: function getGISTProofByBlock(uint256 id, uint256 blockNumber) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractSession) GetGISTProofByBlock(id *big.Int, blockNumber *big.Int) (IStateGistProof, error) {
-	return _Contract.Contract.GetGISTProofByBlock(&_Contract.CallOpts, id, blockNumber)
+func (_State *StateSession) GetGISTProofByBlock(id *big.Int, blockNumber *big.Int) (IStateGistProof, error) {
+	return _State.Contract.GetGISTProofByBlock(&_State.CallOpts, id, blockNumber)
 }
 
 // GetGISTProofByBlock is a free data retrieval call binding the contract method 0x046ff140.
 //
 // Solidity: function getGISTProofByBlock(uint256 id, uint256 blockNumber) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCallerSession) GetGISTProofByBlock(id *big.Int, blockNumber *big.Int) (IStateGistProof, error) {
-	return _Contract.Contract.GetGISTProofByBlock(&_Contract.CallOpts, id, blockNumber)
+func (_State *StateCallerSession) GetGISTProofByBlock(id *big.Int, blockNumber *big.Int) (IStateGistProof, error) {
+	return _State.Contract.GetGISTProofByBlock(&_State.CallOpts, id, blockNumber)
 }
 
 // GetGISTProofByRoot is a free data retrieval call binding the contract method 0xe12a36c0.
 //
 // Solidity: function getGISTProofByRoot(uint256 id, uint256 root) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCaller) GetGISTProofByRoot(opts *bind.CallOpts, id *big.Int, root *big.Int) (IStateGistProof, error) {
+func (_State *StateCaller) GetGISTProofByRoot(opts *bind.CallOpts, id *big.Int, root *big.Int) (IStateGistProof, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getGISTProofByRoot", id, root)
+	err := _State.contract.Call(opts, &out, "getGISTProofByRoot", id, root)
 
 	if err != nil {
 		return *new(IStateGistProof), err
@@ -326,23 +326,23 @@ func (_Contract *ContractCaller) GetGISTProofByRoot(opts *bind.CallOpts, id *big
 // GetGISTProofByRoot is a free data retrieval call binding the contract method 0xe12a36c0.
 //
 // Solidity: function getGISTProofByRoot(uint256 id, uint256 root) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractSession) GetGISTProofByRoot(id *big.Int, root *big.Int) (IStateGistProof, error) {
-	return _Contract.Contract.GetGISTProofByRoot(&_Contract.CallOpts, id, root)
+func (_State *StateSession) GetGISTProofByRoot(id *big.Int, root *big.Int) (IStateGistProof, error) {
+	return _State.Contract.GetGISTProofByRoot(&_State.CallOpts, id, root)
 }
 
 // GetGISTProofByRoot is a free data retrieval call binding the contract method 0xe12a36c0.
 //
 // Solidity: function getGISTProofByRoot(uint256 id, uint256 root) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCallerSession) GetGISTProofByRoot(id *big.Int, root *big.Int) (IStateGistProof, error) {
-	return _Contract.Contract.GetGISTProofByRoot(&_Contract.CallOpts, id, root)
+func (_State *StateCallerSession) GetGISTProofByRoot(id *big.Int, root *big.Int) (IStateGistProof, error) {
+	return _State.Contract.GetGISTProofByRoot(&_State.CallOpts, id, root)
 }
 
 // GetGISTProofByTime is a free data retrieval call binding the contract method 0xd51afebf.
 //
 // Solidity: function getGISTProofByTime(uint256 id, uint256 timestamp) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCaller) GetGISTProofByTime(opts *bind.CallOpts, id *big.Int, timestamp *big.Int) (IStateGistProof, error) {
+func (_State *StateCaller) GetGISTProofByTime(opts *bind.CallOpts, id *big.Int, timestamp *big.Int) (IStateGistProof, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getGISTProofByTime", id, timestamp)
+	err := _State.contract.Call(opts, &out, "getGISTProofByTime", id, timestamp)
 
 	if err != nil {
 		return *new(IStateGistProof), err
@@ -357,23 +357,23 @@ func (_Contract *ContractCaller) GetGISTProofByTime(opts *bind.CallOpts, id *big
 // GetGISTProofByTime is a free data retrieval call binding the contract method 0xd51afebf.
 //
 // Solidity: function getGISTProofByTime(uint256 id, uint256 timestamp) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractSession) GetGISTProofByTime(id *big.Int, timestamp *big.Int) (IStateGistProof, error) {
-	return _Contract.Contract.GetGISTProofByTime(&_Contract.CallOpts, id, timestamp)
+func (_State *StateSession) GetGISTProofByTime(id *big.Int, timestamp *big.Int) (IStateGistProof, error) {
+	return _State.Contract.GetGISTProofByTime(&_State.CallOpts, id, timestamp)
 }
 
 // GetGISTProofByTime is a free data retrieval call binding the contract method 0xd51afebf.
 //
 // Solidity: function getGISTProofByTime(uint256 id, uint256 timestamp) view returns((uint256,bool,uint256[64],uint256,uint256,bool,uint256,uint256))
-func (_Contract *ContractCallerSession) GetGISTProofByTime(id *big.Int, timestamp *big.Int) (IStateGistProof, error) {
-	return _Contract.Contract.GetGISTProofByTime(&_Contract.CallOpts, id, timestamp)
+func (_State *StateCallerSession) GetGISTProofByTime(id *big.Int, timestamp *big.Int) (IStateGistProof, error) {
+	return _State.Contract.GetGISTProofByTime(&_State.CallOpts, id, timestamp)
 }
 
 // GetGISTRoot is a free data retrieval call binding the contract method 0x2439e3a6.
 //
 // Solidity: function getGISTRoot() view returns(uint256)
-func (_Contract *ContractCaller) GetGISTRoot(opts *bind.CallOpts) (*big.Int, error) {
+func (_State *StateCaller) GetGISTRoot(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getGISTRoot")
+	err := _State.contract.Call(opts, &out, "getGISTRoot")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -388,23 +388,23 @@ func (_Contract *ContractCaller) GetGISTRoot(opts *bind.CallOpts) (*big.Int, err
 // GetGISTRoot is a free data retrieval call binding the contract method 0x2439e3a6.
 //
 // Solidity: function getGISTRoot() view returns(uint256)
-func (_Contract *ContractSession) GetGISTRoot() (*big.Int, error) {
-	return _Contract.Contract.GetGISTRoot(&_Contract.CallOpts)
+func (_State *StateSession) GetGISTRoot() (*big.Int, error) {
+	return _State.Contract.GetGISTRoot(&_State.CallOpts)
 }
 
 // GetGISTRoot is a free data retrieval call binding the contract method 0x2439e3a6.
 //
 // Solidity: function getGISTRoot() view returns(uint256)
-func (_Contract *ContractCallerSession) GetGISTRoot() (*big.Int, error) {
-	return _Contract.Contract.GetGISTRoot(&_Contract.CallOpts)
+func (_State *StateCallerSession) GetGISTRoot() (*big.Int, error) {
+	return _State.Contract.GetGISTRoot(&_State.CallOpts)
 }
 
 // GetGISTRootHistory is a free data retrieval call binding the contract method 0x2f7670e4.
 //
 // Solidity: function getGISTRootHistory(uint256 start, uint256 length) view returns((uint256,uint256,uint256,uint256,uint256,uint256)[])
-func (_Contract *ContractCaller) GetGISTRootHistory(opts *bind.CallOpts, start *big.Int, length *big.Int) ([]IStateGistRootInfo, error) {
+func (_State *StateCaller) GetGISTRootHistory(opts *bind.CallOpts, start *big.Int, length *big.Int) ([]IStateGistRootInfo, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getGISTRootHistory", start, length)
+	err := _State.contract.Call(opts, &out, "getGISTRootHistory", start, length)
 
 	if err != nil {
 		return *new([]IStateGistRootInfo), err
@@ -419,23 +419,23 @@ func (_Contract *ContractCaller) GetGISTRootHistory(opts *bind.CallOpts, start *
 // GetGISTRootHistory is a free data retrieval call binding the contract method 0x2f7670e4.
 //
 // Solidity: function getGISTRootHistory(uint256 start, uint256 length) view returns((uint256,uint256,uint256,uint256,uint256,uint256)[])
-func (_Contract *ContractSession) GetGISTRootHistory(start *big.Int, length *big.Int) ([]IStateGistRootInfo, error) {
-	return _Contract.Contract.GetGISTRootHistory(&_Contract.CallOpts, start, length)
+func (_State *StateSession) GetGISTRootHistory(start *big.Int, length *big.Int) ([]IStateGistRootInfo, error) {
+	return _State.Contract.GetGISTRootHistory(&_State.CallOpts, start, length)
 }
 
 // GetGISTRootHistory is a free data retrieval call binding the contract method 0x2f7670e4.
 //
 // Solidity: function getGISTRootHistory(uint256 start, uint256 length) view returns((uint256,uint256,uint256,uint256,uint256,uint256)[])
-func (_Contract *ContractCallerSession) GetGISTRootHistory(start *big.Int, length *big.Int) ([]IStateGistRootInfo, error) {
-	return _Contract.Contract.GetGISTRootHistory(&_Contract.CallOpts, start, length)
+func (_State *StateCallerSession) GetGISTRootHistory(start *big.Int, length *big.Int) ([]IStateGistRootInfo, error) {
+	return _State.Contract.GetGISTRootHistory(&_State.CallOpts, start, length)
 }
 
 // GetGISTRootHistoryLength is a free data retrieval call binding the contract method 0xdccbd57a.
 //
 // Solidity: function getGISTRootHistoryLength() view returns(uint256)
-func (_Contract *ContractCaller) GetGISTRootHistoryLength(opts *bind.CallOpts) (*big.Int, error) {
+func (_State *StateCaller) GetGISTRootHistoryLength(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getGISTRootHistoryLength")
+	err := _State.contract.Call(opts, &out, "getGISTRootHistoryLength")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -450,23 +450,23 @@ func (_Contract *ContractCaller) GetGISTRootHistoryLength(opts *bind.CallOpts) (
 // GetGISTRootHistoryLength is a free data retrieval call binding the contract method 0xdccbd57a.
 //
 // Solidity: function getGISTRootHistoryLength() view returns(uint256)
-func (_Contract *ContractSession) GetGISTRootHistoryLength() (*big.Int, error) {
-	return _Contract.Contract.GetGISTRootHistoryLength(&_Contract.CallOpts)
+func (_State *StateSession) GetGISTRootHistoryLength() (*big.Int, error) {
+	return _State.Contract.GetGISTRootHistoryLength(&_State.CallOpts)
 }
 
 // GetGISTRootHistoryLength is a free data retrieval call binding the contract method 0xdccbd57a.
 //
 // Solidity: function getGISTRootHistoryLength() view returns(uint256)
-func (_Contract *ContractCallerSession) GetGISTRootHistoryLength() (*big.Int, error) {
-	return _Contract.Contract.GetGISTRootHistoryLength(&_Contract.CallOpts)
+func (_State *StateCallerSession) GetGISTRootHistoryLength() (*big.Int, error) {
+	return _State.Contract.GetGISTRootHistoryLength(&_State.CallOpts)
 }
 
 // GetGISTRootInfo is a free data retrieval call binding the contract method 0x7c1a66de.
 //
 // Solidity: function getGISTRootInfo(uint256 root) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCaller) GetGISTRootInfo(opts *bind.CallOpts, root *big.Int) (IStateGistRootInfo, error) {
+func (_State *StateCaller) GetGISTRootInfo(opts *bind.CallOpts, root *big.Int) (IStateGistRootInfo, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getGISTRootInfo", root)
+	err := _State.contract.Call(opts, &out, "getGISTRootInfo", root)
 
 	if err != nil {
 		return *new(IStateGistRootInfo), err
@@ -481,23 +481,23 @@ func (_Contract *ContractCaller) GetGISTRootInfo(opts *bind.CallOpts, root *big.
 // GetGISTRootInfo is a free data retrieval call binding the contract method 0x7c1a66de.
 //
 // Solidity: function getGISTRootInfo(uint256 root) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractSession) GetGISTRootInfo(root *big.Int) (IStateGistRootInfo, error) {
-	return _Contract.Contract.GetGISTRootInfo(&_Contract.CallOpts, root)
+func (_State *StateSession) GetGISTRootInfo(root *big.Int) (IStateGistRootInfo, error) {
+	return _State.Contract.GetGISTRootInfo(&_State.CallOpts, root)
 }
 
 // GetGISTRootInfo is a free data retrieval call binding the contract method 0x7c1a66de.
 //
 // Solidity: function getGISTRootInfo(uint256 root) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCallerSession) GetGISTRootInfo(root *big.Int) (IStateGistRootInfo, error) {
-	return _Contract.Contract.GetGISTRootInfo(&_Contract.CallOpts, root)
+func (_State *StateCallerSession) GetGISTRootInfo(root *big.Int) (IStateGistRootInfo, error) {
+	return _State.Contract.GetGISTRootInfo(&_State.CallOpts, root)
 }
 
 // GetGISTRootInfoByBlock is a free data retrieval call binding the contract method 0x5845e530.
 //
 // Solidity: function getGISTRootInfoByBlock(uint256 blockNumber) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCaller) GetGISTRootInfoByBlock(opts *bind.CallOpts, blockNumber *big.Int) (IStateGistRootInfo, error) {
+func (_State *StateCaller) GetGISTRootInfoByBlock(opts *bind.CallOpts, blockNumber *big.Int) (IStateGistRootInfo, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getGISTRootInfoByBlock", blockNumber)
+	err := _State.contract.Call(opts, &out, "getGISTRootInfoByBlock", blockNumber)
 
 	if err != nil {
 		return *new(IStateGistRootInfo), err
@@ -512,23 +512,23 @@ func (_Contract *ContractCaller) GetGISTRootInfoByBlock(opts *bind.CallOpts, blo
 // GetGISTRootInfoByBlock is a free data retrieval call binding the contract method 0x5845e530.
 //
 // Solidity: function getGISTRootInfoByBlock(uint256 blockNumber) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractSession) GetGISTRootInfoByBlock(blockNumber *big.Int) (IStateGistRootInfo, error) {
-	return _Contract.Contract.GetGISTRootInfoByBlock(&_Contract.CallOpts, blockNumber)
+func (_State *StateSession) GetGISTRootInfoByBlock(blockNumber *big.Int) (IStateGistRootInfo, error) {
+	return _State.Contract.GetGISTRootInfoByBlock(&_State.CallOpts, blockNumber)
 }
 
 // GetGISTRootInfoByBlock is a free data retrieval call binding the contract method 0x5845e530.
 //
 // Solidity: function getGISTRootInfoByBlock(uint256 blockNumber) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCallerSession) GetGISTRootInfoByBlock(blockNumber *big.Int) (IStateGistRootInfo, error) {
-	return _Contract.Contract.GetGISTRootInfoByBlock(&_Contract.CallOpts, blockNumber)
+func (_State *StateCallerSession) GetGISTRootInfoByBlock(blockNumber *big.Int) (IStateGistRootInfo, error) {
+	return _State.Contract.GetGISTRootInfoByBlock(&_State.CallOpts, blockNumber)
 }
 
 // GetGISTRootInfoByTime is a free data retrieval call binding the contract method 0x0ef6e65b.
 //
 // Solidity: function getGISTRootInfoByTime(uint256 timestamp) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCaller) GetGISTRootInfoByTime(opts *bind.CallOpts, timestamp *big.Int) (IStateGistRootInfo, error) {
+func (_State *StateCaller) GetGISTRootInfoByTime(opts *bind.CallOpts, timestamp *big.Int) (IStateGistRootInfo, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getGISTRootInfoByTime", timestamp)
+	err := _State.contract.Call(opts, &out, "getGISTRootInfoByTime", timestamp)
 
 	if err != nil {
 		return *new(IStateGistRootInfo), err
@@ -543,23 +543,23 @@ func (_Contract *ContractCaller) GetGISTRootInfoByTime(opts *bind.CallOpts, time
 // GetGISTRootInfoByTime is a free data retrieval call binding the contract method 0x0ef6e65b.
 //
 // Solidity: function getGISTRootInfoByTime(uint256 timestamp) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractSession) GetGISTRootInfoByTime(timestamp *big.Int) (IStateGistRootInfo, error) {
-	return _Contract.Contract.GetGISTRootInfoByTime(&_Contract.CallOpts, timestamp)
+func (_State *StateSession) GetGISTRootInfoByTime(timestamp *big.Int) (IStateGistRootInfo, error) {
+	return _State.Contract.GetGISTRootInfoByTime(&_State.CallOpts, timestamp)
 }
 
 // GetGISTRootInfoByTime is a free data retrieval call binding the contract method 0x0ef6e65b.
 //
 // Solidity: function getGISTRootInfoByTime(uint256 timestamp) view returns((uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCallerSession) GetGISTRootInfoByTime(timestamp *big.Int) (IStateGistRootInfo, error) {
-	return _Contract.Contract.GetGISTRootInfoByTime(&_Contract.CallOpts, timestamp)
+func (_State *StateCallerSession) GetGISTRootInfoByTime(timestamp *big.Int) (IStateGistRootInfo, error) {
+	return _State.Contract.GetGISTRootInfoByTime(&_State.CallOpts, timestamp)
 }
 
 // GetStateInfoById is a free data retrieval call binding the contract method 0xb4bdea55.
 //
 // Solidity: function getStateInfoById(uint256 id) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCaller) GetStateInfoById(opts *bind.CallOpts, id *big.Int) (IStateStateInfo, error) {
+func (_State *StateCaller) GetStateInfoById(opts *bind.CallOpts, id *big.Int) (IStateStateInfo, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getStateInfoById", id)
+	err := _State.contract.Call(opts, &out, "getStateInfoById", id)
 
 	if err != nil {
 		return *new(IStateStateInfo), err
@@ -574,23 +574,23 @@ func (_Contract *ContractCaller) GetStateInfoById(opts *bind.CallOpts, id *big.I
 // GetStateInfoById is a free data retrieval call binding the contract method 0xb4bdea55.
 //
 // Solidity: function getStateInfoById(uint256 id) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractSession) GetStateInfoById(id *big.Int) (IStateStateInfo, error) {
-	return _Contract.Contract.GetStateInfoById(&_Contract.CallOpts, id)
+func (_State *StateSession) GetStateInfoById(id *big.Int) (IStateStateInfo, error) {
+	return _State.Contract.GetStateInfoById(&_State.CallOpts, id)
 }
 
 // GetStateInfoById is a free data retrieval call binding the contract method 0xb4bdea55.
 //
 // Solidity: function getStateInfoById(uint256 id) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCallerSession) GetStateInfoById(id *big.Int) (IStateStateInfo, error) {
-	return _Contract.Contract.GetStateInfoById(&_Contract.CallOpts, id)
+func (_State *StateCallerSession) GetStateInfoById(id *big.Int) (IStateStateInfo, error) {
+	return _State.Contract.GetStateInfoById(&_State.CallOpts, id)
 }
 
 // GetStateInfoByIdAndState is a free data retrieval call binding the contract method 0x53c87312.
 //
 // Solidity: function getStateInfoByIdAndState(uint256 id, uint256 state) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCaller) GetStateInfoByIdAndState(opts *bind.CallOpts, id *big.Int, state *big.Int) (IStateStateInfo, error) {
+func (_State *StateCaller) GetStateInfoByIdAndState(opts *bind.CallOpts, id *big.Int, state *big.Int) (IStateStateInfo, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getStateInfoByIdAndState", id, state)
+	err := _State.contract.Call(opts, &out, "getStateInfoByIdAndState", id, state)
 
 	if err != nil {
 		return *new(IStateStateInfo), err
@@ -605,23 +605,23 @@ func (_Contract *ContractCaller) GetStateInfoByIdAndState(opts *bind.CallOpts, i
 // GetStateInfoByIdAndState is a free data retrieval call binding the contract method 0x53c87312.
 //
 // Solidity: function getStateInfoByIdAndState(uint256 id, uint256 state) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractSession) GetStateInfoByIdAndState(id *big.Int, state *big.Int) (IStateStateInfo, error) {
-	return _Contract.Contract.GetStateInfoByIdAndState(&_Contract.CallOpts, id, state)
+func (_State *StateSession) GetStateInfoByIdAndState(id *big.Int, state *big.Int) (IStateStateInfo, error) {
+	return _State.Contract.GetStateInfoByIdAndState(&_State.CallOpts, id, state)
 }
 
 // GetStateInfoByIdAndState is a free data retrieval call binding the contract method 0x53c87312.
 //
 // Solidity: function getStateInfoByIdAndState(uint256 id, uint256 state) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256))
-func (_Contract *ContractCallerSession) GetStateInfoByIdAndState(id *big.Int, state *big.Int) (IStateStateInfo, error) {
-	return _Contract.Contract.GetStateInfoByIdAndState(&_Contract.CallOpts, id, state)
+func (_State *StateCallerSession) GetStateInfoByIdAndState(id *big.Int, state *big.Int) (IStateStateInfo, error) {
+	return _State.Contract.GetStateInfoByIdAndState(&_State.CallOpts, id, state)
 }
 
 // GetStateInfoHistoryById is a free data retrieval call binding the contract method 0xe99858fe.
 //
 // Solidity: function getStateInfoHistoryById(uint256 id, uint256 startIndex, uint256 length) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256)[])
-func (_Contract *ContractCaller) GetStateInfoHistoryById(opts *bind.CallOpts, id *big.Int, startIndex *big.Int, length *big.Int) ([]IStateStateInfo, error) {
+func (_State *StateCaller) GetStateInfoHistoryById(opts *bind.CallOpts, id *big.Int, startIndex *big.Int, length *big.Int) ([]IStateStateInfo, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getStateInfoHistoryById", id, startIndex, length)
+	err := _State.contract.Call(opts, &out, "getStateInfoHistoryById", id, startIndex, length)
 
 	if err != nil {
 		return *new([]IStateStateInfo), err
@@ -636,23 +636,23 @@ func (_Contract *ContractCaller) GetStateInfoHistoryById(opts *bind.CallOpts, id
 // GetStateInfoHistoryById is a free data retrieval call binding the contract method 0xe99858fe.
 //
 // Solidity: function getStateInfoHistoryById(uint256 id, uint256 startIndex, uint256 length) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256)[])
-func (_Contract *ContractSession) GetStateInfoHistoryById(id *big.Int, startIndex *big.Int, length *big.Int) ([]IStateStateInfo, error) {
-	return _Contract.Contract.GetStateInfoHistoryById(&_Contract.CallOpts, id, startIndex, length)
+func (_State *StateSession) GetStateInfoHistoryById(id *big.Int, startIndex *big.Int, length *big.Int) ([]IStateStateInfo, error) {
+	return _State.Contract.GetStateInfoHistoryById(&_State.CallOpts, id, startIndex, length)
 }
 
 // GetStateInfoHistoryById is a free data retrieval call binding the contract method 0xe99858fe.
 //
 // Solidity: function getStateInfoHistoryById(uint256 id, uint256 startIndex, uint256 length) view returns((uint256,uint256,uint256,uint256,uint256,uint256,uint256)[])
-func (_Contract *ContractCallerSession) GetStateInfoHistoryById(id *big.Int, startIndex *big.Int, length *big.Int) ([]IStateStateInfo, error) {
-	return _Contract.Contract.GetStateInfoHistoryById(&_Contract.CallOpts, id, startIndex, length)
+func (_State *StateCallerSession) GetStateInfoHistoryById(id *big.Int, startIndex *big.Int, length *big.Int) ([]IStateStateInfo, error) {
+	return _State.Contract.GetStateInfoHistoryById(&_State.CallOpts, id, startIndex, length)
 }
 
 // GetStateInfoHistoryLengthById is a free data retrieval call binding the contract method 0x676d5b5a.
 //
 // Solidity: function getStateInfoHistoryLengthById(uint256 id) view returns(uint256)
-func (_Contract *ContractCaller) GetStateInfoHistoryLengthById(opts *bind.CallOpts, id *big.Int) (*big.Int, error) {
+func (_State *StateCaller) GetStateInfoHistoryLengthById(opts *bind.CallOpts, id *big.Int) (*big.Int, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getStateInfoHistoryLengthById", id)
+	err := _State.contract.Call(opts, &out, "getStateInfoHistoryLengthById", id)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -667,23 +667,23 @@ func (_Contract *ContractCaller) GetStateInfoHistoryLengthById(opts *bind.CallOp
 // GetStateInfoHistoryLengthById is a free data retrieval call binding the contract method 0x676d5b5a.
 //
 // Solidity: function getStateInfoHistoryLengthById(uint256 id) view returns(uint256)
-func (_Contract *ContractSession) GetStateInfoHistoryLengthById(id *big.Int) (*big.Int, error) {
-	return _Contract.Contract.GetStateInfoHistoryLengthById(&_Contract.CallOpts, id)
+func (_State *StateSession) GetStateInfoHistoryLengthById(id *big.Int) (*big.Int, error) {
+	return _State.Contract.GetStateInfoHistoryLengthById(&_State.CallOpts, id)
 }
 
 // GetStateInfoHistoryLengthById is a free data retrieval call binding the contract method 0x676d5b5a.
 //
 // Solidity: function getStateInfoHistoryLengthById(uint256 id) view returns(uint256)
-func (_Contract *ContractCallerSession) GetStateInfoHistoryLengthById(id *big.Int) (*big.Int, error) {
-	return _Contract.Contract.GetStateInfoHistoryLengthById(&_Contract.CallOpts, id)
+func (_State *StateCallerSession) GetStateInfoHistoryLengthById(id *big.Int) (*big.Int, error) {
+	return _State.Contract.GetStateInfoHistoryLengthById(&_State.CallOpts, id)
 }
 
 // GetVerifier is a free data retrieval call binding the contract method 0x46657fe9.
 //
 // Solidity: function getVerifier() view returns(address)
-func (_Contract *ContractCaller) GetVerifier(opts *bind.CallOpts) (common.Address, error) {
+func (_State *StateCaller) GetVerifier(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "getVerifier")
+	err := _State.contract.Call(opts, &out, "getVerifier")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -698,23 +698,23 @@ func (_Contract *ContractCaller) GetVerifier(opts *bind.CallOpts) (common.Addres
 // GetVerifier is a free data retrieval call binding the contract method 0x46657fe9.
 //
 // Solidity: function getVerifier() view returns(address)
-func (_Contract *ContractSession) GetVerifier() (common.Address, error) {
-	return _Contract.Contract.GetVerifier(&_Contract.CallOpts)
+func (_State *StateSession) GetVerifier() (common.Address, error) {
+	return _State.Contract.GetVerifier(&_State.CallOpts)
 }
 
 // GetVerifier is a free data retrieval call binding the contract method 0x46657fe9.
 //
 // Solidity: function getVerifier() view returns(address)
-func (_Contract *ContractCallerSession) GetVerifier() (common.Address, error) {
-	return _Contract.Contract.GetVerifier(&_Contract.CallOpts)
+func (_State *StateCallerSession) GetVerifier() (common.Address, error) {
+	return _State.Contract.GetVerifier(&_State.CallOpts)
 }
 
 // IdExists is a free data retrieval call binding the contract method 0x0b8a295a.
 //
 // Solidity: function idExists(uint256 id) view returns(bool)
-func (_Contract *ContractCaller) IdExists(opts *bind.CallOpts, id *big.Int) (bool, error) {
+func (_State *StateCaller) IdExists(opts *bind.CallOpts, id *big.Int) (bool, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "idExists", id)
+	err := _State.contract.Call(opts, &out, "idExists", id)
 
 	if err != nil {
 		return *new(bool), err
@@ -729,23 +729,23 @@ func (_Contract *ContractCaller) IdExists(opts *bind.CallOpts, id *big.Int) (boo
 // IdExists is a free data retrieval call binding the contract method 0x0b8a295a.
 //
 // Solidity: function idExists(uint256 id) view returns(bool)
-func (_Contract *ContractSession) IdExists(id *big.Int) (bool, error) {
-	return _Contract.Contract.IdExists(&_Contract.CallOpts, id)
+func (_State *StateSession) IdExists(id *big.Int) (bool, error) {
+	return _State.Contract.IdExists(&_State.CallOpts, id)
 }
 
 // IdExists is a free data retrieval call binding the contract method 0x0b8a295a.
 //
 // Solidity: function idExists(uint256 id) view returns(bool)
-func (_Contract *ContractCallerSession) IdExists(id *big.Int) (bool, error) {
-	return _Contract.Contract.IdExists(&_Contract.CallOpts, id)
+func (_State *StateCallerSession) IdExists(id *big.Int) (bool, error) {
+	return _State.Contract.IdExists(&_State.CallOpts, id)
 }
 
 // Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
 //
 // Solidity: function owner() view returns(address)
-func (_Contract *ContractCaller) Owner(opts *bind.CallOpts) (common.Address, error) {
+func (_State *StateCaller) Owner(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "owner")
+	err := _State.contract.Call(opts, &out, "owner")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -760,23 +760,23 @@ func (_Contract *ContractCaller) Owner(opts *bind.CallOpts) (common.Address, err
 // Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
 //
 // Solidity: function owner() view returns(address)
-func (_Contract *ContractSession) Owner() (common.Address, error) {
-	return _Contract.Contract.Owner(&_Contract.CallOpts)
+func (_State *StateSession) Owner() (common.Address, error) {
+	return _State.Contract.Owner(&_State.CallOpts)
 }
 
 // Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
 //
 // Solidity: function owner() view returns(address)
-func (_Contract *ContractCallerSession) Owner() (common.Address, error) {
-	return _Contract.Contract.Owner(&_Contract.CallOpts)
+func (_State *StateCallerSession) Owner() (common.Address, error) {
+	return _State.Contract.Owner(&_State.CallOpts)
 }
 
 // PendingOwner is a free data retrieval call binding the contract method 0xe30c3978.
 //
 // Solidity: function pendingOwner() view returns(address)
-func (_Contract *ContractCaller) PendingOwner(opts *bind.CallOpts) (common.Address, error) {
+func (_State *StateCaller) PendingOwner(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "pendingOwner")
+	err := _State.contract.Call(opts, &out, "pendingOwner")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -791,23 +791,23 @@ func (_Contract *ContractCaller) PendingOwner(opts *bind.CallOpts) (common.Addre
 // PendingOwner is a free data retrieval call binding the contract method 0xe30c3978.
 //
 // Solidity: function pendingOwner() view returns(address)
-func (_Contract *ContractSession) PendingOwner() (common.Address, error) {
-	return _Contract.Contract.PendingOwner(&_Contract.CallOpts)
+func (_State *StateSession) PendingOwner() (common.Address, error) {
+	return _State.Contract.PendingOwner(&_State.CallOpts)
 }
 
 // PendingOwner is a free data retrieval call binding the contract method 0xe30c3978.
 //
 // Solidity: function pendingOwner() view returns(address)
-func (_Contract *ContractCallerSession) PendingOwner() (common.Address, error) {
-	return _Contract.Contract.PendingOwner(&_Contract.CallOpts)
+func (_State *StateCallerSession) PendingOwner() (common.Address, error) {
+	return _State.Contract.PendingOwner(&_State.CallOpts)
 }
 
 // StateExists is a free data retrieval call binding the contract method 0x233a4d23.
 //
 // Solidity: function stateExists(uint256 id, uint256 state) view returns(bool)
-func (_Contract *ContractCaller) StateExists(opts *bind.CallOpts, id *big.Int, state *big.Int) (bool, error) {
+func (_State *StateCaller) StateExists(opts *bind.CallOpts, id *big.Int, state *big.Int) (bool, error) {
 	var out []interface{}
-	err := _Contract.contract.Call(opts, &out, "stateExists", id, state)
+	err := _State.contract.Call(opts, &out, "stateExists", id, state)
 
 	if err != nil {
 		return *new(bool), err
@@ -822,146 +822,146 @@ func (_Contract *ContractCaller) StateExists(opts *bind.CallOpts, id *big.Int, s
 // StateExists is a free data retrieval call binding the contract method 0x233a4d23.
 //
 // Solidity: function stateExists(uint256 id, uint256 state) view returns(bool)
-func (_Contract *ContractSession) StateExists(id *big.Int, state *big.Int) (bool, error) {
-	return _Contract.Contract.StateExists(&_Contract.CallOpts, id, state)
+func (_State *StateSession) StateExists(id *big.Int, state *big.Int) (bool, error) {
+	return _State.Contract.StateExists(&_State.CallOpts, id, state)
 }
 
 // StateExists is a free data retrieval call binding the contract method 0x233a4d23.
 //
 // Solidity: function stateExists(uint256 id, uint256 state) view returns(bool)
-func (_Contract *ContractCallerSession) StateExists(id *big.Int, state *big.Int) (bool, error) {
-	return _Contract.Contract.StateExists(&_Contract.CallOpts, id, state)
+func (_State *StateCallerSession) StateExists(id *big.Int, state *big.Int) (bool, error) {
+	return _State.Contract.StateExists(&_State.CallOpts, id, state)
 }
 
 // AcceptOwnership is a paid mutator transaction binding the contract method 0x79ba5097.
 //
 // Solidity: function acceptOwnership() returns()
-func (_Contract *ContractTransactor) AcceptOwnership(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Contract.contract.Transact(opts, "acceptOwnership")
+func (_State *StateTransactor) AcceptOwnership(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _State.contract.Transact(opts, "acceptOwnership")
 }
 
 // AcceptOwnership is a paid mutator transaction binding the contract method 0x79ba5097.
 //
 // Solidity: function acceptOwnership() returns()
-func (_Contract *ContractSession) AcceptOwnership() (*types.Transaction, error) {
-	return _Contract.Contract.AcceptOwnership(&_Contract.TransactOpts)
+func (_State *StateSession) AcceptOwnership() (*types.Transaction, error) {
+	return _State.Contract.AcceptOwnership(&_State.TransactOpts)
 }
 
 // AcceptOwnership is a paid mutator transaction binding the contract method 0x79ba5097.
 //
 // Solidity: function acceptOwnership() returns()
-func (_Contract *ContractTransactorSession) AcceptOwnership() (*types.Transaction, error) {
-	return _Contract.Contract.AcceptOwnership(&_Contract.TransactOpts)
+func (_State *StateTransactorSession) AcceptOwnership() (*types.Transaction, error) {
+	return _State.Contract.AcceptOwnership(&_State.TransactOpts)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0xc4d66de8.
 //
 // Solidity: function initialize(address verifierContractAddr) returns()
-func (_Contract *ContractTransactor) Initialize(opts *bind.TransactOpts, verifierContractAddr common.Address) (*types.Transaction, error) {
-	return _Contract.contract.Transact(opts, "initialize", verifierContractAddr)
+func (_State *StateTransactor) Initialize(opts *bind.TransactOpts, verifierContractAddr common.Address) (*types.Transaction, error) {
+	return _State.contract.Transact(opts, "initialize", verifierContractAddr)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0xc4d66de8.
 //
 // Solidity: function initialize(address verifierContractAddr) returns()
-func (_Contract *ContractSession) Initialize(verifierContractAddr common.Address) (*types.Transaction, error) {
-	return _Contract.Contract.Initialize(&_Contract.TransactOpts, verifierContractAddr)
+func (_State *StateSession) Initialize(verifierContractAddr common.Address) (*types.Transaction, error) {
+	return _State.Contract.Initialize(&_State.TransactOpts, verifierContractAddr)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0xc4d66de8.
 //
 // Solidity: function initialize(address verifierContractAddr) returns()
-func (_Contract *ContractTransactorSession) Initialize(verifierContractAddr common.Address) (*types.Transaction, error) {
-	return _Contract.Contract.Initialize(&_Contract.TransactOpts, verifierContractAddr)
+func (_State *StateTransactorSession) Initialize(verifierContractAddr common.Address) (*types.Transaction, error) {
+	return _State.Contract.Initialize(&_State.TransactOpts, verifierContractAddr)
 }
 
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
-func (_Contract *ContractTransactor) RenounceOwnership(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Contract.contract.Transact(opts, "renounceOwnership")
+func (_State *StateTransactor) RenounceOwnership(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _State.contract.Transact(opts, "renounceOwnership")
 }
 
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
-func (_Contract *ContractSession) RenounceOwnership() (*types.Transaction, error) {
-	return _Contract.Contract.RenounceOwnership(&_Contract.TransactOpts)
+func (_State *StateSession) RenounceOwnership() (*types.Transaction, error) {
+	return _State.Contract.RenounceOwnership(&_State.TransactOpts)
 }
 
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
-func (_Contract *ContractTransactorSession) RenounceOwnership() (*types.Transaction, error) {
-	return _Contract.Contract.RenounceOwnership(&_Contract.TransactOpts)
+func (_State *StateTransactorSession) RenounceOwnership() (*types.Transaction, error) {
+	return _State.Contract.RenounceOwnership(&_State.TransactOpts)
 }
 
 // SetVerifier is a paid mutator transaction binding the contract method 0x5437988d.
 //
 // Solidity: function setVerifier(address newVerifierAddr) returns()
-func (_Contract *ContractTransactor) SetVerifier(opts *bind.TransactOpts, newVerifierAddr common.Address) (*types.Transaction, error) {
-	return _Contract.contract.Transact(opts, "setVerifier", newVerifierAddr)
+func (_State *StateTransactor) SetVerifier(opts *bind.TransactOpts, newVerifierAddr common.Address) (*types.Transaction, error) {
+	return _State.contract.Transact(opts, "setVerifier", newVerifierAddr)
 }
 
 // SetVerifier is a paid mutator transaction binding the contract method 0x5437988d.
 //
 // Solidity: function setVerifier(address newVerifierAddr) returns()
-func (_Contract *ContractSession) SetVerifier(newVerifierAddr common.Address) (*types.Transaction, error) {
-	return _Contract.Contract.SetVerifier(&_Contract.TransactOpts, newVerifierAddr)
+func (_State *StateSession) SetVerifier(newVerifierAddr common.Address) (*types.Transaction, error) {
+	return _State.Contract.SetVerifier(&_State.TransactOpts, newVerifierAddr)
 }
 
 // SetVerifier is a paid mutator transaction binding the contract method 0x5437988d.
 //
 // Solidity: function setVerifier(address newVerifierAddr) returns()
-func (_Contract *ContractTransactorSession) SetVerifier(newVerifierAddr common.Address) (*types.Transaction, error) {
-	return _Contract.Contract.SetVerifier(&_Contract.TransactOpts, newVerifierAddr)
+func (_State *StateTransactorSession) SetVerifier(newVerifierAddr common.Address) (*types.Transaction, error) {
+	return _State.Contract.SetVerifier(&_State.TransactOpts, newVerifierAddr)
 }
 
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 //
 // Solidity: function transferOwnership(address newOwner) returns()
-func (_Contract *ContractTransactor) TransferOwnership(opts *bind.TransactOpts, newOwner common.Address) (*types.Transaction, error) {
-	return _Contract.contract.Transact(opts, "transferOwnership", newOwner)
+func (_State *StateTransactor) TransferOwnership(opts *bind.TransactOpts, newOwner common.Address) (*types.Transaction, error) {
+	return _State.contract.Transact(opts, "transferOwnership", newOwner)
 }
 
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 //
 // Solidity: function transferOwnership(address newOwner) returns()
-func (_Contract *ContractSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
-	return _Contract.Contract.TransferOwnership(&_Contract.TransactOpts, newOwner)
+func (_State *StateSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
+	return _State.Contract.TransferOwnership(&_State.TransactOpts, newOwner)
 }
 
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 //
 // Solidity: function transferOwnership(address newOwner) returns()
-func (_Contract *ContractTransactorSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
-	return _Contract.Contract.TransferOwnership(&_Contract.TransactOpts, newOwner)
+func (_State *StateTransactorSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
+	return _State.Contract.TransferOwnership(&_State.TransactOpts, newOwner)
 }
 
 // TransitState is a paid mutator transaction binding the contract method 0x28f88a65.
 //
 // Solidity: function transitState(uint256 id, uint256 oldState, uint256 newState, bool isOldStateGenesis, uint256[2] a, uint256[2][2] b, uint256[2] c) returns()
-func (_Contract *ContractTransactor) TransitState(opts *bind.TransactOpts, id *big.Int, oldState *big.Int, newState *big.Int, isOldStateGenesis bool, a [2]*big.Int, b [2][2]*big.Int, c [2]*big.Int) (*types.Transaction, error) {
-	return _Contract.contract.Transact(opts, "transitState", id, oldState, newState, isOldStateGenesis, a, b, c)
+func (_State *StateTransactor) TransitState(opts *bind.TransactOpts, id *big.Int, oldState *big.Int, newState *big.Int, isOldStateGenesis bool, a [2]*big.Int, b [2][2]*big.Int, c [2]*big.Int) (*types.Transaction, error) {
+	return _State.contract.Transact(opts, "transitState", id, oldState, newState, isOldStateGenesis, a, b, c)
 }
 
 // TransitState is a paid mutator transaction binding the contract method 0x28f88a65.
 //
 // Solidity: function transitState(uint256 id, uint256 oldState, uint256 newState, bool isOldStateGenesis, uint256[2] a, uint256[2][2] b, uint256[2] c) returns()
-func (_Contract *ContractSession) TransitState(id *big.Int, oldState *big.Int, newState *big.Int, isOldStateGenesis bool, a [2]*big.Int, b [2][2]*big.Int, c [2]*big.Int) (*types.Transaction, error) {
-	return _Contract.Contract.TransitState(&_Contract.TransactOpts, id, oldState, newState, isOldStateGenesis, a, b, c)
+func (_State *StateSession) TransitState(id *big.Int, oldState *big.Int, newState *big.Int, isOldStateGenesis bool, a [2]*big.Int, b [2][2]*big.Int, c [2]*big.Int) (*types.Transaction, error) {
+	return _State.Contract.TransitState(&_State.TransactOpts, id, oldState, newState, isOldStateGenesis, a, b, c)
 }
 
 // TransitState is a paid mutator transaction binding the contract method 0x28f88a65.
 //
 // Solidity: function transitState(uint256 id, uint256 oldState, uint256 newState, bool isOldStateGenesis, uint256[2] a, uint256[2][2] b, uint256[2] c) returns()
-func (_Contract *ContractTransactorSession) TransitState(id *big.Int, oldState *big.Int, newState *big.Int, isOldStateGenesis bool, a [2]*big.Int, b [2][2]*big.Int, c [2]*big.Int) (*types.Transaction, error) {
-	return _Contract.Contract.TransitState(&_Contract.TransactOpts, id, oldState, newState, isOldStateGenesis, a, b, c)
+func (_State *StateTransactorSession) TransitState(id *big.Int, oldState *big.Int, newState *big.Int, isOldStateGenesis bool, a [2]*big.Int, b [2][2]*big.Int, c [2]*big.Int) (*types.Transaction, error) {
+	return _State.Contract.TransitState(&_State.TransactOpts, id, oldState, newState, isOldStateGenesis, a, b, c)
 }
 
-// ContractInitializedIterator is returned from FilterInitialized and is used to iterate over the raw logs and unpacked data for Initialized events raised by the Contract contract.
-type ContractInitializedIterator struct {
-	Event *ContractInitialized // Event containing the contract specifics and raw log
+// StateInitializedIterator is returned from FilterInitialized and is used to iterate over the raw logs and unpacked data for Initialized events raised by the State contract.
+type StateInitializedIterator struct {
+	Event *StateInitialized // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -975,7 +975,7 @@ type ContractInitializedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *ContractInitializedIterator) Next() bool {
+func (it *StateInitializedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -984,7 +984,7 @@ func (it *ContractInitializedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(ContractInitialized)
+			it.Event = new(StateInitialized)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -999,7 +999,7 @@ func (it *ContractInitializedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(ContractInitialized)
+		it.Event = new(StateInitialized)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1015,19 +1015,19 @@ func (it *ContractInitializedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *ContractInitializedIterator) Error() error {
+func (it *StateInitializedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *ContractInitializedIterator) Close() error {
+func (it *StateInitializedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// ContractInitialized represents a Initialized event raised by the Contract contract.
-type ContractInitialized struct {
+// StateInitialized represents a Initialized event raised by the State contract.
+type StateInitialized struct {
 	Version uint8
 	Raw     types.Log // Blockchain specific contextual infos
 }
@@ -1035,21 +1035,21 @@ type ContractInitialized struct {
 // FilterInitialized is a free log retrieval operation binding the contract event 0x7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb3847402498.
 //
 // Solidity: event Initialized(uint8 version)
-func (_Contract *ContractFilterer) FilterInitialized(opts *bind.FilterOpts) (*ContractInitializedIterator, error) {
+func (_State *StateFilterer) FilterInitialized(opts *bind.FilterOpts) (*StateInitializedIterator, error) {
 
-	logs, sub, err := _Contract.contract.FilterLogs(opts, "Initialized")
+	logs, sub, err := _State.contract.FilterLogs(opts, "Initialized")
 	if err != nil {
 		return nil, err
 	}
-	return &ContractInitializedIterator{contract: _Contract.contract, event: "Initialized", logs: logs, sub: sub}, nil
+	return &StateInitializedIterator{contract: _State.contract, event: "Initialized", logs: logs, sub: sub}, nil
 }
 
 // WatchInitialized is a free log subscription operation binding the contract event 0x7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb3847402498.
 //
 // Solidity: event Initialized(uint8 version)
-func (_Contract *ContractFilterer) WatchInitialized(opts *bind.WatchOpts, sink chan<- *ContractInitialized) (event.Subscription, error) {
+func (_State *StateFilterer) WatchInitialized(opts *bind.WatchOpts, sink chan<- *StateInitialized) (event.Subscription, error) {
 
-	logs, sub, err := _Contract.contract.WatchLogs(opts, "Initialized")
+	logs, sub, err := _State.contract.WatchLogs(opts, "Initialized")
 	if err != nil {
 		return nil, err
 	}
@@ -1059,8 +1059,8 @@ func (_Contract *ContractFilterer) WatchInitialized(opts *bind.WatchOpts, sink c
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(ContractInitialized)
-				if err := _Contract.contract.UnpackLog(event, "Initialized", log); err != nil {
+				event := new(StateInitialized)
+				if err := _State.contract.UnpackLog(event, "Initialized", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1084,18 +1084,18 @@ func (_Contract *ContractFilterer) WatchInitialized(opts *bind.WatchOpts, sink c
 // ParseInitialized is a log parse operation binding the contract event 0x7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb3847402498.
 //
 // Solidity: event Initialized(uint8 version)
-func (_Contract *ContractFilterer) ParseInitialized(log types.Log) (*ContractInitialized, error) {
-	event := new(ContractInitialized)
-	if err := _Contract.contract.UnpackLog(event, "Initialized", log); err != nil {
+func (_State *StateFilterer) ParseInitialized(log types.Log) (*StateInitialized, error) {
+	event := new(StateInitialized)
+	if err := _State.contract.UnpackLog(event, "Initialized", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// ContractOwnershipTransferStartedIterator is returned from FilterOwnershipTransferStarted and is used to iterate over the raw logs and unpacked data for OwnershipTransferStarted events raised by the Contract contract.
-type ContractOwnershipTransferStartedIterator struct {
-	Event *ContractOwnershipTransferStarted // Event containing the contract specifics and raw log
+// StateOwnershipTransferStartedIterator is returned from FilterOwnershipTransferStarted and is used to iterate over the raw logs and unpacked data for OwnershipTransferStarted events raised by the State contract.
+type StateOwnershipTransferStartedIterator struct {
+	Event *StateOwnershipTransferStarted // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1109,7 +1109,7 @@ type ContractOwnershipTransferStartedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *ContractOwnershipTransferStartedIterator) Next() bool {
+func (it *StateOwnershipTransferStartedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1118,7 +1118,7 @@ func (it *ContractOwnershipTransferStartedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(ContractOwnershipTransferStarted)
+			it.Event = new(StateOwnershipTransferStarted)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1133,7 +1133,7 @@ func (it *ContractOwnershipTransferStartedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(ContractOwnershipTransferStarted)
+		it.Event = new(StateOwnershipTransferStarted)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1149,19 +1149,19 @@ func (it *ContractOwnershipTransferStartedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *ContractOwnershipTransferStartedIterator) Error() error {
+func (it *StateOwnershipTransferStartedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *ContractOwnershipTransferStartedIterator) Close() error {
+func (it *StateOwnershipTransferStartedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// ContractOwnershipTransferStarted represents a OwnershipTransferStarted event raised by the Contract contract.
-type ContractOwnershipTransferStarted struct {
+// StateOwnershipTransferStarted represents a OwnershipTransferStarted event raised by the State contract.
+type StateOwnershipTransferStarted struct {
 	PreviousOwner common.Address
 	NewOwner      common.Address
 	Raw           types.Log // Blockchain specific contextual infos
@@ -1170,7 +1170,7 @@ type ContractOwnershipTransferStarted struct {
 // FilterOwnershipTransferStarted is a free log retrieval operation binding the contract event 0x38d16b8cac22d99fc7c124b9cd0de2d3fa1faef420bfe791d8c362d765e22700.
 //
 // Solidity: event OwnershipTransferStarted(address indexed previousOwner, address indexed newOwner)
-func (_Contract *ContractFilterer) FilterOwnershipTransferStarted(opts *bind.FilterOpts, previousOwner []common.Address, newOwner []common.Address) (*ContractOwnershipTransferStartedIterator, error) {
+func (_State *StateFilterer) FilterOwnershipTransferStarted(opts *bind.FilterOpts, previousOwner []common.Address, newOwner []common.Address) (*StateOwnershipTransferStartedIterator, error) {
 
 	var previousOwnerRule []interface{}
 	for _, previousOwnerItem := range previousOwner {
@@ -1181,17 +1181,17 @@ func (_Contract *ContractFilterer) FilterOwnershipTransferStarted(opts *bind.Fil
 		newOwnerRule = append(newOwnerRule, newOwnerItem)
 	}
 
-	logs, sub, err := _Contract.contract.FilterLogs(opts, "OwnershipTransferStarted", previousOwnerRule, newOwnerRule)
+	logs, sub, err := _State.contract.FilterLogs(opts, "OwnershipTransferStarted", previousOwnerRule, newOwnerRule)
 	if err != nil {
 		return nil, err
 	}
-	return &ContractOwnershipTransferStartedIterator{contract: _Contract.contract, event: "OwnershipTransferStarted", logs: logs, sub: sub}, nil
+	return &StateOwnershipTransferStartedIterator{contract: _State.contract, event: "OwnershipTransferStarted", logs: logs, sub: sub}, nil
 }
 
 // WatchOwnershipTransferStarted is a free log subscription operation binding the contract event 0x38d16b8cac22d99fc7c124b9cd0de2d3fa1faef420bfe791d8c362d765e22700.
 //
 // Solidity: event OwnershipTransferStarted(address indexed previousOwner, address indexed newOwner)
-func (_Contract *ContractFilterer) WatchOwnershipTransferStarted(opts *bind.WatchOpts, sink chan<- *ContractOwnershipTransferStarted, previousOwner []common.Address, newOwner []common.Address) (event.Subscription, error) {
+func (_State *StateFilterer) WatchOwnershipTransferStarted(opts *bind.WatchOpts, sink chan<- *StateOwnershipTransferStarted, previousOwner []common.Address, newOwner []common.Address) (event.Subscription, error) {
 
 	var previousOwnerRule []interface{}
 	for _, previousOwnerItem := range previousOwner {
@@ -1202,7 +1202,7 @@ func (_Contract *ContractFilterer) WatchOwnershipTransferStarted(opts *bind.Watc
 		newOwnerRule = append(newOwnerRule, newOwnerItem)
 	}
 
-	logs, sub, err := _Contract.contract.WatchLogs(opts, "OwnershipTransferStarted", previousOwnerRule, newOwnerRule)
+	logs, sub, err := _State.contract.WatchLogs(opts, "OwnershipTransferStarted", previousOwnerRule, newOwnerRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1212,8 +1212,8 @@ func (_Contract *ContractFilterer) WatchOwnershipTransferStarted(opts *bind.Watc
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(ContractOwnershipTransferStarted)
-				if err := _Contract.contract.UnpackLog(event, "OwnershipTransferStarted", log); err != nil {
+				event := new(StateOwnershipTransferStarted)
+				if err := _State.contract.UnpackLog(event, "OwnershipTransferStarted", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1237,18 +1237,18 @@ func (_Contract *ContractFilterer) WatchOwnershipTransferStarted(opts *bind.Watc
 // ParseOwnershipTransferStarted is a log parse operation binding the contract event 0x38d16b8cac22d99fc7c124b9cd0de2d3fa1faef420bfe791d8c362d765e22700.
 //
 // Solidity: event OwnershipTransferStarted(address indexed previousOwner, address indexed newOwner)
-func (_Contract *ContractFilterer) ParseOwnershipTransferStarted(log types.Log) (*ContractOwnershipTransferStarted, error) {
-	event := new(ContractOwnershipTransferStarted)
-	if err := _Contract.contract.UnpackLog(event, "OwnershipTransferStarted", log); err != nil {
+func (_State *StateFilterer) ParseOwnershipTransferStarted(log types.Log) (*StateOwnershipTransferStarted, error) {
+	event := new(StateOwnershipTransferStarted)
+	if err := _State.contract.UnpackLog(event, "OwnershipTransferStarted", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// ContractOwnershipTransferredIterator is returned from FilterOwnershipTransferred and is used to iterate over the raw logs and unpacked data for OwnershipTransferred events raised by the Contract contract.
-type ContractOwnershipTransferredIterator struct {
-	Event *ContractOwnershipTransferred // Event containing the contract specifics and raw log
+// StateOwnershipTransferredIterator is returned from FilterOwnershipTransferred and is used to iterate over the raw logs and unpacked data for OwnershipTransferred events raised by the State contract.
+type StateOwnershipTransferredIterator struct {
+	Event *StateOwnershipTransferred // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1262,7 +1262,7 @@ type ContractOwnershipTransferredIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *ContractOwnershipTransferredIterator) Next() bool {
+func (it *StateOwnershipTransferredIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1271,7 +1271,7 @@ func (it *ContractOwnershipTransferredIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(ContractOwnershipTransferred)
+			it.Event = new(StateOwnershipTransferred)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1286,7 +1286,7 @@ func (it *ContractOwnershipTransferredIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(ContractOwnershipTransferred)
+		it.Event = new(StateOwnershipTransferred)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1302,19 +1302,19 @@ func (it *ContractOwnershipTransferredIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *ContractOwnershipTransferredIterator) Error() error {
+func (it *StateOwnershipTransferredIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *ContractOwnershipTransferredIterator) Close() error {
+func (it *StateOwnershipTransferredIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// ContractOwnershipTransferred represents a OwnershipTransferred event raised by the Contract contract.
-type ContractOwnershipTransferred struct {
+// StateOwnershipTransferred represents a OwnershipTransferred event raised by the State contract.
+type StateOwnershipTransferred struct {
 	PreviousOwner common.Address
 	NewOwner      common.Address
 	Raw           types.Log // Blockchain specific contextual infos
@@ -1323,7 +1323,7 @@ type ContractOwnershipTransferred struct {
 // FilterOwnershipTransferred is a free log retrieval operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 //
 // Solidity: event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
-func (_Contract *ContractFilterer) FilterOwnershipTransferred(opts *bind.FilterOpts, previousOwner []common.Address, newOwner []common.Address) (*ContractOwnershipTransferredIterator, error) {
+func (_State *StateFilterer) FilterOwnershipTransferred(opts *bind.FilterOpts, previousOwner []common.Address, newOwner []common.Address) (*StateOwnershipTransferredIterator, error) {
 
 	var previousOwnerRule []interface{}
 	for _, previousOwnerItem := range previousOwner {
@@ -1334,17 +1334,17 @@ func (_Contract *ContractFilterer) FilterOwnershipTransferred(opts *bind.FilterO
 		newOwnerRule = append(newOwnerRule, newOwnerItem)
 	}
 
-	logs, sub, err := _Contract.contract.FilterLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
+	logs, sub, err := _State.contract.FilterLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
 	if err != nil {
 		return nil, err
 	}
-	return &ContractOwnershipTransferredIterator{contract: _Contract.contract, event: "OwnershipTransferred", logs: logs, sub: sub}, nil
+	return &StateOwnershipTransferredIterator{contract: _State.contract, event: "OwnershipTransferred", logs: logs, sub: sub}, nil
 }
 
 // WatchOwnershipTransferred is a free log subscription operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 //
 // Solidity: event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
-func (_Contract *ContractFilterer) WatchOwnershipTransferred(opts *bind.WatchOpts, sink chan<- *ContractOwnershipTransferred, previousOwner []common.Address, newOwner []common.Address) (event.Subscription, error) {
+func (_State *StateFilterer) WatchOwnershipTransferred(opts *bind.WatchOpts, sink chan<- *StateOwnershipTransferred, previousOwner []common.Address, newOwner []common.Address) (event.Subscription, error) {
 
 	var previousOwnerRule []interface{}
 	for _, previousOwnerItem := range previousOwner {
@@ -1355,7 +1355,7 @@ func (_Contract *ContractFilterer) WatchOwnershipTransferred(opts *bind.WatchOpt
 		newOwnerRule = append(newOwnerRule, newOwnerItem)
 	}
 
-	logs, sub, err := _Contract.contract.WatchLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
+	logs, sub, err := _State.contract.WatchLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1365,8 +1365,8 @@ func (_Contract *ContractFilterer) WatchOwnershipTransferred(opts *bind.WatchOpt
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(ContractOwnershipTransferred)
-				if err := _Contract.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
+				event := new(StateOwnershipTransferred)
+				if err := _State.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1390,18 +1390,18 @@ func (_Contract *ContractFilterer) WatchOwnershipTransferred(opts *bind.WatchOpt
 // ParseOwnershipTransferred is a log parse operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 //
 // Solidity: event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
-func (_Contract *ContractFilterer) ParseOwnershipTransferred(log types.Log) (*ContractOwnershipTransferred, error) {
-	event := new(ContractOwnershipTransferred)
-	if err := _Contract.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
+func (_State *StateFilterer) ParseOwnershipTransferred(log types.Log) (*StateOwnershipTransferred, error) {
+	event := new(StateOwnershipTransferred)
+	if err := _State.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// ContractStateUpdatedIterator is returned from FilterStateUpdated and is used to iterate over the raw logs and unpacked data for StateUpdated events raised by the Contract contract.
-type ContractStateUpdatedIterator struct {
-	Event *ContractStateUpdated // Event containing the contract specifics and raw log
+// StateStateUpdatedIterator is returned from FilterStateUpdated and is used to iterate over the raw logs and unpacked data for StateUpdated events raised by the State contract.
+type StateStateUpdatedIterator struct {
+	Event *StateStateUpdated // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1415,7 +1415,7 @@ type ContractStateUpdatedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *ContractStateUpdatedIterator) Next() bool {
+func (it *StateStateUpdatedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1424,7 +1424,7 @@ func (it *ContractStateUpdatedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(ContractStateUpdated)
+			it.Event = new(StateStateUpdated)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1439,7 +1439,7 @@ func (it *ContractStateUpdatedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(ContractStateUpdated)
+		it.Event = new(StateStateUpdated)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1455,19 +1455,19 @@ func (it *ContractStateUpdatedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *ContractStateUpdatedIterator) Error() error {
+func (it *StateStateUpdatedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *ContractStateUpdatedIterator) Close() error {
+func (it *StateStateUpdatedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// ContractStateUpdated represents a StateUpdated event raised by the Contract contract.
-type ContractStateUpdated struct {
+// StateStateUpdated represents a StateUpdated event raised by the State contract.
+type StateStateUpdated struct {
 	Id        *big.Int
 	BlockN    *big.Int
 	Timestamp *big.Int
@@ -1478,21 +1478,21 @@ type ContractStateUpdated struct {
 // FilterStateUpdated is a free log retrieval operation binding the contract event 0x88aef4d78ad30d12a12a98e96007f5b09c1610b5364b2b99960b7d07e00a8838.
 //
 // Solidity: event StateUpdated(uint256 id, uint256 blockN, uint256 timestamp, uint256 state)
-func (_Contract *ContractFilterer) FilterStateUpdated(opts *bind.FilterOpts) (*ContractStateUpdatedIterator, error) {
+func (_State *StateFilterer) FilterStateUpdated(opts *bind.FilterOpts) (*StateStateUpdatedIterator, error) {
 
-	logs, sub, err := _Contract.contract.FilterLogs(opts, "StateUpdated")
+	logs, sub, err := _State.contract.FilterLogs(opts, "StateUpdated")
 	if err != nil {
 		return nil, err
 	}
-	return &ContractStateUpdatedIterator{contract: _Contract.contract, event: "StateUpdated", logs: logs, sub: sub}, nil
+	return &StateStateUpdatedIterator{contract: _State.contract, event: "StateUpdated", logs: logs, sub: sub}, nil
 }
 
 // WatchStateUpdated is a free log subscription operation binding the contract event 0x88aef4d78ad30d12a12a98e96007f5b09c1610b5364b2b99960b7d07e00a8838.
 //
 // Solidity: event StateUpdated(uint256 id, uint256 blockN, uint256 timestamp, uint256 state)
-func (_Contract *ContractFilterer) WatchStateUpdated(opts *bind.WatchOpts, sink chan<- *ContractStateUpdated) (event.Subscription, error) {
+func (_State *StateFilterer) WatchStateUpdated(opts *bind.WatchOpts, sink chan<- *StateStateUpdated) (event.Subscription, error) {
 
-	logs, sub, err := _Contract.contract.WatchLogs(opts, "StateUpdated")
+	logs, sub, err := _State.contract.WatchLogs(opts, "StateUpdated")
 	if err != nil {
 		return nil, err
 	}
@@ -1502,8 +1502,8 @@ func (_Contract *ContractFilterer) WatchStateUpdated(opts *bind.WatchOpts, sink 
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(ContractStateUpdated)
-				if err := _Contract.contract.UnpackLog(event, "StateUpdated", log); err != nil {
+				event := new(StateStateUpdated)
+				if err := _State.contract.UnpackLog(event, "StateUpdated", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1527,9 +1527,9 @@ func (_Contract *ContractFilterer) WatchStateUpdated(opts *bind.WatchOpts, sink 
 // ParseStateUpdated is a log parse operation binding the contract event 0x88aef4d78ad30d12a12a98e96007f5b09c1610b5364b2b99960b7d07e00a8838.
 //
 // Solidity: event StateUpdated(uint256 id, uint256 blockN, uint256 timestamp, uint256 state)
-func (_Contract *ContractFilterer) ParseStateUpdated(log types.Log) (*ContractStateUpdated, error) {
-	event := new(ContractStateUpdated)
-	if err := _Contract.contract.UnpackLog(event, "StateUpdated", log); err != nil {
+func (_State *StateFilterer) ParseStateUpdated(log types.Log) (*StateStateUpdated, error) {
+	event := new(StateStateUpdated)
+	if err := _State.contract.UnpackLog(event, "StateUpdated", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
