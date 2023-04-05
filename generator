@@ -48,7 +48,7 @@ docker run \
 	-v $PWD/go/state.go:/state.go \
 	--rm --name ethereum-node \
 	ethereum/client-go:alltools-v1.11.5 \
-	abigen --abi=/abi.json --pkg=state --out=state.go
+	abigen --abi=/abi.json --pkg=state_contract --out=state.go
 
 # Sync deps
 pushd $PWD/go > /dev/null
