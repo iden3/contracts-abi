@@ -1,4 +1,4 @@
-module github.com/iden3/contracts-abi/onchainIssuer/go/abi
+module github.com/iden3/contracts-abi/identityBase/go/abi
 
 go 1.19
 
