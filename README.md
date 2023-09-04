@@ -1,6 +1,11 @@
 # Contract's abi
 This repository contains contract interfaces for various languages.
 
+**!!Important!!**
+
+State contract abi is stable, and in minor versions new functionality can be added.
+Meantime Onchain Resovler and Identity are not stable yet and ABI can be updated in minor versions of package. 
+
 ## Requirements:
 ```
 jq
