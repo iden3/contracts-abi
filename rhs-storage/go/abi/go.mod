@@ -1,4 +1,4 @@
-module github.com/iden3/contracts-abi/identity-tree-store/identity-tree-store/go/abi
+module github.com/iden3/contracts-abi/rhs-storage/go/abi
 
 go 1.19
 
