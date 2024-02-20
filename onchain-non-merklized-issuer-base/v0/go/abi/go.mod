@@ -1,4 +1,4 @@
-module github.com/iden3/contracts-abi/onchain-non-merklized-identity/v0/go/abi
+module github.com/iden3/contracts-abi/onchain-non-merklized-issuer-base/v0/go/abi
 
 go 1.21.4
 
