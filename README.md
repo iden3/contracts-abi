@@ -34,6 +34,14 @@ ln -s $PATH_TO_CONTRACTS contracts
 | getCredential(uint256,uint256)       | 0x37c1d9ff |
 | getCredentialProtocolVersion()       | 0xb9f5eb4d |
 
+### IZKPVerifier
+
+| Method signature                     | Method id  |
+|--------------------------------------|------------|
+| getZKPRequestsCount()                | 0x6508e1b4 |
+| getZKPRequest(uint64)                | 0xc76d0845 |
+| getZKPRequests(uint256,uint256)      | 0x5f9e60d7 |
+
 ## Contributing
 
 Unless you explicitly state otherwise, any contribution intentionally submitted
