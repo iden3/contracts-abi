@@ -22,6 +22,26 @@ ln -s $PATH_TO_CONTRACTS contracts
 ./generator
 ```
 
+## Method ids
+
+### Onchain non merklized issuer base
+
+| Method signature                     | Method id  |
+|--------------------------------------|------------|
+| INonMerklizedIssuer                  | 0x58874949 |
+| supportsInterface(bytes4)            | 0x01ffc9a7 |
+| getUserCredentialIds(uint256)        | 0x668d0bd4 |
+| getCredential(uint256,uint256)       | 0x37c1d9ff |
+| getCredentialAdapterVersion()        | 0x09cb9b62 |
+
+### IZKPVerifier
+
+| Method signature                     | Method id  |
+|--------------------------------------|------------|
+| getZKPRequestsCount()                | 0x6508e1b4 |
+| getZKPRequest(uint64)                | 0xc76d0845 |
+| getZKPRequests(uint256,uint256)      | 0x5f9e60d7 |
+
 ## Contributing
 
 Unless you explicitly state otherwise, any contribution intentionally submitted
