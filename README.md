@@ -28,11 +28,11 @@ ln -s $PATH_TO_CONTRACTS contracts
 
 | Method signature                     | Method id  |
 |--------------------------------------|------------|
-| INonMerklizedIssuer                  | 0xd60c24ab |
+| INonMerklizedIssuer                  | 0x58874949 |
 | supportsInterface(bytes4)            | 0x01ffc9a7 |
 | getUserCredentialIds(uint256)        | 0x668d0bd4 |
 | getCredential(uint256,uint256)       | 0x37c1d9ff |
-| getCredentialProtocolVersion()       | 0xb9f5eb4d |
+| getCredentialAdapterVersion()        | 0x09cb9b62 |
 
 ### IZKPVerifier
 
