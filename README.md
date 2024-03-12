@@ -28,7 +28,7 @@ ln -s $PATH_TO_CONTRACTS contracts
 
 | Method signature                     | Method id  |
 |--------------------------------------|------------|
-| IIdentifiable                        | 0x58874949 |
+| IIdentifiable                        | 0x5d1ca631 |
 | INonMerklizedIssuer                  | 0x58874949 |
 | supportsInterface(bytes4)            | 0x01ffc9a7 |
 | getUserCredentialIds(uint256)        | 0x668d0bd4 |
