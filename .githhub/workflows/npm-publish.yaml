@@ -1,4 +1,4 @@
-name: Publish abi to NPM
+name: Publish npm onchain non merklized issuer to NPM
 
 on: workflow_dispatch
 jobs:
