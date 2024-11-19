@@ -1,5 +1,5 @@
 {
-  "name": "onchain-non-merklized-issuer-base",
+  "name": "@iden3/onchain-non-merklized-issuer-base",
   "version": "0.0.1",
   "source": "src/index.ts",
   "types": "dist/types/index.d.ts",
