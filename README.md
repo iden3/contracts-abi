@@ -1,23 +1,27 @@
 # Contract's abi
+
 This repository contains contract interfaces for various languages.
 
 **!!Important!!**
 
 State contract abi is stable, and in minor versions new functionality can be added.
-Meantime Onchain Resovler and Identity are not stable yet and ABI can be updated in minor versions of package. 
+Meantime Onchain Resovler and Identity are not stable yet and ABI can be updated in minor versions of package.
 
-## Requirements:
+## Requirements
+
 ```
 jq
 npm
 ```
 
 Before running the `./generator` script, you need to clone the [contracts repository](https://github.com/iden3/contracts) or create a symlink to it:
+
 ```bash
 ln -s $PATH_TO_CONTRACTS contracts
 ```
 
-## To run the script, follow these steps:
+## To run the script, follow these steps
+
 ```bash
 ./generator
 ```
@@ -59,3 +63,9 @@ This project is licensed under either of
 - [MIT license](https://opensource.org/licenses/MIT) ([`LICENSE-MIT`](LICENSE-MIT))
 
 at your option.
+
+## TODO: genaration types for go and js
+
+1. install ide3/contracts
+2. run something like `typechain --target ethers-v6 --out-dir app/contracts './node_modules/neufund-contracts/build/contracts/*.json'`
+3. think about how to generate types for go
