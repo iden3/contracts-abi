@@ -1,6 +1,6 @@
 {
   "name": "@iden3/onchain-non-merklized-issuer-base-abi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "source": "src/index.ts",
   "types": "dist/types/index.d.ts",
   "main": "dist/cjs/index.js",
