@@ -1,5 +1,5 @@
 {
-  "name": "@iden3/onchain-non-merklized-issuer-base",
+  "name": "@iden3/onchain-non-merklized-issuer-base-abi",
   "version": "0.0.1",
   "source": "src/index.ts",
   "types": "dist/types/index.d.ts",
@@ -18,7 +18,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT or Apache-2.0",
   "description": "",
   "devDependencies": {
     "@typechain/ethers-v6": "^0.5.1",
