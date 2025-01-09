@@ -59,7 +59,7 @@ type IZKPVerifierZKPResponse struct {
 
 // UniversalVerifierMetaData contains all meta data concerning the UniversalVerifier contract.
 var UniversalVerifierMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"name\":\"InvalidInitialization\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"},{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"internalType\":\"uint256\",\"name\":\"linkID\",\"type\":\"uint256\"},{\"internalType\":\"uint64\",\"name\":\"requestIdToCompare\",\"type\":\"uint64\"},{\"internalType\":\"uint256\",\"name\":\"linkIdToCompare\",\"type\":\"uint256\"}],\"name\":\"LinkedProofError\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotInitializing\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"OwnableInvalidOwner\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"OwnableUnauthorizedAccount\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"version\",\"type\":\"uint64\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferStarted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"REQUESTS_RETURN_LIMIT\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"}],\"name\":\"getProofStatus\",\"outputs\":[{\"components\":[{\"internalType\":\"bool\",\"name\":\"isVerified\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"validatorVersion\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"blockTimestamp\",\"type\":\"uint256\"}],\"internalType\":\"structIZKPVerifier.ProofStatus\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"}],\"name\":\"getProofStorageField\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getStateAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"}],\"name\":\"getZKPRequest\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"metadata\",\"type\":\"string\"},{\"internalType\":\"contractICircuitValidator\",\"name\":\"validator\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"structIZKPVerifier.ZKPRequest\",\"name\":\"zkpRequest\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"startIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"getZKPRequests\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"metadata\",\"type\":\"string\"},{\"internalType\":\"contractICircuitValidator\",\"name\":\"validator\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"structIZKPVerifier.ZKPRequest[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getZKPRequestsCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"}],\"name\":\"isProofVerified\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pendingOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"}],\"name\":\"requestIdExists\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contractIState\",\"name\":\"state\",\"type\":\"address\"}],\"name\":\"setState\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"components\":[{\"internalType\":\"string\",\"name\":\"metadata\",\"type\":\"string\"},{\"internalType\":\"contractICircuitValidator\",\"name\":\"validator\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"structIZKPVerifier.ZKPRequest\",\"name\":\"request\",\"type\":\"tuple\"}],\"name\":\"setZKPRequest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64[]\",\"name\":\"requestIds\",\"type\":\"uint64[]\"},{\"components\":[{\"internalType\":\"string\",\"name\":\"metadata\",\"type\":\"string\"},{\"internalType\":\"contractICircuitValidator\",\"name\":\"validator\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"structIZKPVerifier.ZKPRequest[]\",\"name\":\"requests\",\"type\":\"tuple[]\"}],\"name\":\"setZKPRequests\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"internalType\":\"uint256[]\",\"name\":\"inputs\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[2]\",\"name\":\"a\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2][2]\",\"name\":\"b\",\"type\":\"uint256[2][2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"c\",\"type\":\"uint256[2]\"}],\"name\":\"submitZKPResponse\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"internalType\":\"bytes\",\"name\":\"zkProof\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"structIZKPVerifier.ZKPResponse[]\",\"name\":\"responses\",\"type\":\"tuple[]\"},{\"internalType\":\"bytes\",\"name\":\"crossChainProof\",\"type\":\"bytes\"}],\"name\":\"submitZKPResponseV2\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint64[]\",\"name\":\"requestIds\",\"type\":\"uint64[]\"}],\"name\":\"verifyLinkedProofs\",\"outputs\":[],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"internalType\":\"uint256[]\",\"name\":\"inputs\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[2]\",\"name\":\"a\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2][2]\",\"name\":\"b\",\"type\":\"uint256[2][2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"c\",\"type\":\"uint256[2]\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"verifyZKPResponse\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"inputIndex\",\"type\":\"uint256\"}],\"internalType\":\"structICircuitValidator.KeyToInputIndex[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[],\"name\":\"InvalidInitialization\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"},{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"internalType\":\"uint256\",\"name\":\"linkID\",\"type\":\"uint256\"},{\"internalType\":\"uint64\",\"name\":\"requestIdToCompare\",\"type\":\"uint64\"},{\"internalType\":\"uint256\",\"name\":\"linkIdToCompare\",\"type\":\"uint256\"}],\"name\":\"LinkedProofError\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotInitializing\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"OwnableInvalidOwner\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"OwnableUnauthorizedAccount\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"version\",\"type\":\"uint64\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferStarted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"requestOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"metadata\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"ZKPRequestSet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"requestOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"metadata\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"ZKPRequestUpdate\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"ZKPResponseSubmitted\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"REQUESTS_RETURN_LIMIT\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"VERSION\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contractICircuitValidator\",\"name\":\"validator\",\"type\":\"address\"}],\"name\":\"addValidatorToWhitelist\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"}],\"name\":\"disableZKPRequest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"}],\"name\":\"enableZKPRequest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"}],\"name\":\"getProofStatus\",\"outputs\":[{\"components\":[{\"internalType\":\"bool\",\"name\":\"isVerified\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"validatorVersion\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"blockTimestamp\",\"type\":\"uint256\"}],\"internalType\":\"structIZKPVerifier.ProofStatus\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"}],\"name\":\"getProofStorageField\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"}],\"name\":\"getRequestOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getStateAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"}],\"name\":\"getZKPRequest\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"metadata\",\"type\":\"string\"},{\"internalType\":\"contractICircuitValidator\",\"name\":\"validator\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"structIZKPVerifier.ZKPRequest\",\"name\":\"zkpRequest\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"startIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"getZKPRequests\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"metadata\",\"type\":\"string\"},{\"internalType\":\"contractICircuitValidator\",\"name\":\"validator\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"structIZKPVerifier.ZKPRequest[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getZKPRequestsCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contractIState\",\"name\":\"state\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"}],\"name\":\"isProofVerified\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contractICircuitValidator\",\"name\":\"validator\",\"type\":\"address\"}],\"name\":\"isWhitelistedValidator\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"}],\"name\":\"isZKPRequestEnabled\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pendingOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contractICircuitValidator\",\"name\":\"validator\",\"type\":\"address\"}],\"name\":\"removeValidatorFromWhitelist\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"}],\"name\":\"requestIdExists\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"internalType\":\"address\",\"name\":\"requestOwner\",\"type\":\"address\"}],\"name\":\"setRequestOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contractIState\",\"name\":\"state\",\"type\":\"address\"}],\"name\":\"setState\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"components\":[{\"internalType\":\"string\",\"name\":\"metadata\",\"type\":\"string\"},{\"internalType\":\"contractICircuitValidator\",\"name\":\"validator\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"structIZKPVerifier.ZKPRequest\",\"name\":\"request\",\"type\":\"tuple\"}],\"name\":\"setZKPRequest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64[]\",\"name\":\"requestIds\",\"type\":\"uint64[]\"},{\"components\":[{\"internalType\":\"string\",\"name\":\"metadata\",\"type\":\"string\"},{\"internalType\":\"contractICircuitValidator\",\"name\":\"validator\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"structIZKPVerifier.ZKPRequest[]\",\"name\":\"requests\",\"type\":\"tuple[]\"}],\"name\":\"setZKPRequests\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"internalType\":\"uint256[]\",\"name\":\"inputs\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[2]\",\"name\":\"a\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2][2]\",\"name\":\"b\",\"type\":\"uint256[2][2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"c\",\"type\":\"uint256[2]\"}],\"name\":\"submitZKPResponse\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"internalType\":\"bytes\",\"name\":\"zkProof\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"structIZKPVerifier.ZKPResponse[]\",\"name\":\"responses\",\"type\":\"tuple[]\"},{\"internalType\":\"bytes\",\"name\":\"crossChainProof\",\"type\":\"bytes\"}],\"name\":\"submitZKPResponseV2\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"components\":[{\"internalType\":\"string\",\"name\":\"metadata\",\"type\":\"string\"},{\"internalType\":\"contractICircuitValidator\",\"name\":\"validator\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"structIZKPVerifier.ZKPRequest\",\"name\":\"request\",\"type\":\"tuple\"}],\"name\":\"updateZKPRequest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint64[]\",\"name\":\"requestIds\",\"type\":\"uint64[]\"}],\"name\":\"verifyLinkedProofs\",\"outputs\":[],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"requestId\",\"type\":\"uint64\"},{\"internalType\":\"uint256[]\",\"name\":\"inputs\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[2]\",\"name\":\"a\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2][2]\",\"name\":\"b\",\"type\":\"uint256[2][2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"c\",\"type\":\"uint256[2]\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"verifyZKPResponse\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"inputIndex\",\"type\":\"uint256\"}],\"internalType\":\"structICircuitValidator.KeyToInputIndex[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}]",
 }
 
 // UniversalVerifierABI is the input ABI used to generate the binding from.
@@ -239,6 +239,37 @@ func (_UniversalVerifier *UniversalVerifierCallerSession) REQUESTSRETURNLIMIT() 
 	return _UniversalVerifier.Contract.REQUESTSRETURNLIMIT(&_UniversalVerifier.CallOpts)
 }
 
+// VERSION is a free data retrieval call binding the contract method 0xffa1ad74.
+//
+// Solidity: function VERSION() view returns(string)
+func (_UniversalVerifier *UniversalVerifierCaller) VERSION(opts *bind.CallOpts) (string, error) {
+	var out []interface{}
+	err := _UniversalVerifier.contract.Call(opts, &out, "VERSION")
+
+	if err != nil {
+		return *new(string), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(string)).(*string)
+
+	return out0, err
+
+}
+
+// VERSION is a free data retrieval call binding the contract method 0xffa1ad74.
+//
+// Solidity: function VERSION() view returns(string)
+func (_UniversalVerifier *UniversalVerifierSession) VERSION() (string, error) {
+	return _UniversalVerifier.Contract.VERSION(&_UniversalVerifier.CallOpts)
+}
+
+// VERSION is a free data retrieval call binding the contract method 0xffa1ad74.
+//
+// Solidity: function VERSION() view returns(string)
+func (_UniversalVerifier *UniversalVerifierCallerSession) VERSION() (string, error) {
+	return _UniversalVerifier.Contract.VERSION(&_UniversalVerifier.CallOpts)
+}
+
 // GetProofStatus is a free data retrieval call binding the contract method 0x8c1da2c9.
 //
 // Solidity: function getProofStatus(address sender, uint64 requestId) view returns((bool,string,uint256,uint256))
@@ -299,6 +330,37 @@ func (_UniversalVerifier *UniversalVerifierSession) GetProofStorageField(user co
 // Solidity: function getProofStorageField(address user, uint64 requestId, string key) view returns(uint256)
 func (_UniversalVerifier *UniversalVerifierCallerSession) GetProofStorageField(user common.Address, requestId uint64, key string) (*big.Int, error) {
 	return _UniversalVerifier.Contract.GetProofStorageField(&_UniversalVerifier.CallOpts, user, requestId, key)
+}
+
+// GetRequestOwner is a free data retrieval call binding the contract method 0x6f2477ad.
+//
+// Solidity: function getRequestOwner(uint64 requestId) view returns(address)
+func (_UniversalVerifier *UniversalVerifierCaller) GetRequestOwner(opts *bind.CallOpts, requestId uint64) (common.Address, error) {
+	var out []interface{}
+	err := _UniversalVerifier.contract.Call(opts, &out, "getRequestOwner", requestId)
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
+}
+
+// GetRequestOwner is a free data retrieval call binding the contract method 0x6f2477ad.
+//
+// Solidity: function getRequestOwner(uint64 requestId) view returns(address)
+func (_UniversalVerifier *UniversalVerifierSession) GetRequestOwner(requestId uint64) (common.Address, error) {
+	return _UniversalVerifier.Contract.GetRequestOwner(&_UniversalVerifier.CallOpts, requestId)
+}
+
+// GetRequestOwner is a free data retrieval call binding the contract method 0x6f2477ad.
+//
+// Solidity: function getRequestOwner(uint64 requestId) view returns(address)
+func (_UniversalVerifier *UniversalVerifierCallerSession) GetRequestOwner(requestId uint64) (common.Address, error) {
+	return _UniversalVerifier.Contract.GetRequestOwner(&_UniversalVerifier.CallOpts, requestId)
 }
 
 // GetStateAddress is a free data retrieval call binding the contract method 0x31969e57.
@@ -456,6 +518,68 @@ func (_UniversalVerifier *UniversalVerifierCallerSession) IsProofVerified(sender
 	return _UniversalVerifier.Contract.IsProofVerified(&_UniversalVerifier.CallOpts, sender, requestId)
 }
 
+// IsWhitelistedValidator is a free data retrieval call binding the contract method 0x9b36d036.
+//
+// Solidity: function isWhitelistedValidator(address validator) view returns(bool)
+func (_UniversalVerifier *UniversalVerifierCaller) IsWhitelistedValidator(opts *bind.CallOpts, validator common.Address) (bool, error) {
+	var out []interface{}
+	err := _UniversalVerifier.contract.Call(opts, &out, "isWhitelistedValidator", validator)
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// IsWhitelistedValidator is a free data retrieval call binding the contract method 0x9b36d036.
+//
+// Solidity: function isWhitelistedValidator(address validator) view returns(bool)
+func (_UniversalVerifier *UniversalVerifierSession) IsWhitelistedValidator(validator common.Address) (bool, error) {
+	return _UniversalVerifier.Contract.IsWhitelistedValidator(&_UniversalVerifier.CallOpts, validator)
+}
+
+// IsWhitelistedValidator is a free data retrieval call binding the contract method 0x9b36d036.
+//
+// Solidity: function isWhitelistedValidator(address validator) view returns(bool)
+func (_UniversalVerifier *UniversalVerifierCallerSession) IsWhitelistedValidator(validator common.Address) (bool, error) {
+	return _UniversalVerifier.Contract.IsWhitelistedValidator(&_UniversalVerifier.CallOpts, validator)
+}
+
+// IsZKPRequestEnabled is a free data retrieval call binding the contract method 0x130a73ac.
+//
+// Solidity: function isZKPRequestEnabled(uint64 requestId) view returns(bool)
+func (_UniversalVerifier *UniversalVerifierCaller) IsZKPRequestEnabled(opts *bind.CallOpts, requestId uint64) (bool, error) {
+	var out []interface{}
+	err := _UniversalVerifier.contract.Call(opts, &out, "isZKPRequestEnabled", requestId)
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// IsZKPRequestEnabled is a free data retrieval call binding the contract method 0x130a73ac.
+//
+// Solidity: function isZKPRequestEnabled(uint64 requestId) view returns(bool)
+func (_UniversalVerifier *UniversalVerifierSession) IsZKPRequestEnabled(requestId uint64) (bool, error) {
+	return _UniversalVerifier.Contract.IsZKPRequestEnabled(&_UniversalVerifier.CallOpts, requestId)
+}
+
+// IsZKPRequestEnabled is a free data retrieval call binding the contract method 0x130a73ac.
+//
+// Solidity: function isZKPRequestEnabled(uint64 requestId) view returns(bool)
+func (_UniversalVerifier *UniversalVerifierCallerSession) IsZKPRequestEnabled(requestId uint64) (bool, error) {
+	return _UniversalVerifier.Contract.IsZKPRequestEnabled(&_UniversalVerifier.CallOpts, requestId)
+}
+
 // Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
 //
 // Solidity: function owner() view returns(address)
@@ -578,6 +702,37 @@ func (_UniversalVerifier *UniversalVerifierCallerSession) VerifyLinkedProofs(sen
 	return _UniversalVerifier.Contract.VerifyLinkedProofs(&_UniversalVerifier.CallOpts, sender, requestIds)
 }
 
+// Version is a free data retrieval call binding the contract method 0x54fd4d50.
+//
+// Solidity: function version() pure returns(string)
+func (_UniversalVerifier *UniversalVerifierCaller) Version(opts *bind.CallOpts) (string, error) {
+	var out []interface{}
+	err := _UniversalVerifier.contract.Call(opts, &out, "version")
+
+	if err != nil {
+		return *new(string), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(string)).(*string)
+
+	return out0, err
+
+}
+
+// Version is a free data retrieval call binding the contract method 0x54fd4d50.
+//
+// Solidity: function version() pure returns(string)
+func (_UniversalVerifier *UniversalVerifierSession) Version() (string, error) {
+	return _UniversalVerifier.Contract.Version(&_UniversalVerifier.CallOpts)
+}
+
+// Version is a free data retrieval call binding the contract method 0x54fd4d50.
+//
+// Solidity: function version() pure returns(string)
+func (_UniversalVerifier *UniversalVerifierCallerSession) Version() (string, error) {
+	return _UniversalVerifier.Contract.Version(&_UniversalVerifier.CallOpts)
+}
+
 // AcceptOwnership is a paid mutator transaction binding the contract method 0x79ba5097.
 //
 // Solidity: function acceptOwnership() returns()
@@ -599,6 +754,111 @@ func (_UniversalVerifier *UniversalVerifierTransactorSession) AcceptOwnership() 
 	return _UniversalVerifier.Contract.AcceptOwnership(&_UniversalVerifier.TransactOpts)
 }
 
+// AddValidatorToWhitelist is a paid mutator transaction binding the contract method 0x59f871a1.
+//
+// Solidity: function addValidatorToWhitelist(address validator) returns()
+func (_UniversalVerifier *UniversalVerifierTransactor) AddValidatorToWhitelist(opts *bind.TransactOpts, validator common.Address) (*types.Transaction, error) {
+	return _UniversalVerifier.contract.Transact(opts, "addValidatorToWhitelist", validator)
+}
+
+// AddValidatorToWhitelist is a paid mutator transaction binding the contract method 0x59f871a1.
+//
+// Solidity: function addValidatorToWhitelist(address validator) returns()
+func (_UniversalVerifier *UniversalVerifierSession) AddValidatorToWhitelist(validator common.Address) (*types.Transaction, error) {
+	return _UniversalVerifier.Contract.AddValidatorToWhitelist(&_UniversalVerifier.TransactOpts, validator)
+}
+
+// AddValidatorToWhitelist is a paid mutator transaction binding the contract method 0x59f871a1.
+//
+// Solidity: function addValidatorToWhitelist(address validator) returns()
+func (_UniversalVerifier *UniversalVerifierTransactorSession) AddValidatorToWhitelist(validator common.Address) (*types.Transaction, error) {
+	return _UniversalVerifier.Contract.AddValidatorToWhitelist(&_UniversalVerifier.TransactOpts, validator)
+}
+
+// DisableZKPRequest is a paid mutator transaction binding the contract method 0x82aff29f.
+//
+// Solidity: function disableZKPRequest(uint64 requestId) returns()
+func (_UniversalVerifier *UniversalVerifierTransactor) DisableZKPRequest(opts *bind.TransactOpts, requestId uint64) (*types.Transaction, error) {
+	return _UniversalVerifier.contract.Transact(opts, "disableZKPRequest", requestId)
+}
+
+// DisableZKPRequest is a paid mutator transaction binding the contract method 0x82aff29f.
+//
+// Solidity: function disableZKPRequest(uint64 requestId) returns()
+func (_UniversalVerifier *UniversalVerifierSession) DisableZKPRequest(requestId uint64) (*types.Transaction, error) {
+	return _UniversalVerifier.Contract.DisableZKPRequest(&_UniversalVerifier.TransactOpts, requestId)
+}
+
+// DisableZKPRequest is a paid mutator transaction binding the contract method 0x82aff29f.
+//
+// Solidity: function disableZKPRequest(uint64 requestId) returns()
+func (_UniversalVerifier *UniversalVerifierTransactorSession) DisableZKPRequest(requestId uint64) (*types.Transaction, error) {
+	return _UniversalVerifier.Contract.DisableZKPRequest(&_UniversalVerifier.TransactOpts, requestId)
+}
+
+// EnableZKPRequest is a paid mutator transaction binding the contract method 0x30def4ac.
+//
+// Solidity: function enableZKPRequest(uint64 requestId) returns()
+func (_UniversalVerifier *UniversalVerifierTransactor) EnableZKPRequest(opts *bind.TransactOpts, requestId uint64) (*types.Transaction, error) {
+	return _UniversalVerifier.contract.Transact(opts, "enableZKPRequest", requestId)
+}
+
+// EnableZKPRequest is a paid mutator transaction binding the contract method 0x30def4ac.
+//
+// Solidity: function enableZKPRequest(uint64 requestId) returns()
+func (_UniversalVerifier *UniversalVerifierSession) EnableZKPRequest(requestId uint64) (*types.Transaction, error) {
+	return _UniversalVerifier.Contract.EnableZKPRequest(&_UniversalVerifier.TransactOpts, requestId)
+}
+
+// EnableZKPRequest is a paid mutator transaction binding the contract method 0x30def4ac.
+//
+// Solidity: function enableZKPRequest(uint64 requestId) returns()
+func (_UniversalVerifier *UniversalVerifierTransactorSession) EnableZKPRequest(requestId uint64) (*types.Transaction, error) {
+	return _UniversalVerifier.Contract.EnableZKPRequest(&_UniversalVerifier.TransactOpts, requestId)
+}
+
+// Initialize is a paid mutator transaction binding the contract method 0x485cc955.
+//
+// Solidity: function initialize(address state, address owner) returns()
+func (_UniversalVerifier *UniversalVerifierTransactor) Initialize(opts *bind.TransactOpts, state common.Address, owner common.Address) (*types.Transaction, error) {
+	return _UniversalVerifier.contract.Transact(opts, "initialize", state, owner)
+}
+
+// Initialize is a paid mutator transaction binding the contract method 0x485cc955.
+//
+// Solidity: function initialize(address state, address owner) returns()
+func (_UniversalVerifier *UniversalVerifierSession) Initialize(state common.Address, owner common.Address) (*types.Transaction, error) {
+	return _UniversalVerifier.Contract.Initialize(&_UniversalVerifier.TransactOpts, state, owner)
+}
+
+// Initialize is a paid mutator transaction binding the contract method 0x485cc955.
+//
+// Solidity: function initialize(address state, address owner) returns()
+func (_UniversalVerifier *UniversalVerifierTransactorSession) Initialize(state common.Address, owner common.Address) (*types.Transaction, error) {
+	return _UniversalVerifier.Contract.Initialize(&_UniversalVerifier.TransactOpts, state, owner)
+}
+
+// RemoveValidatorFromWhitelist is a paid mutator transaction binding the contract method 0x617879fe.
+//
+// Solidity: function removeValidatorFromWhitelist(address validator) returns()
+func (_UniversalVerifier *UniversalVerifierTransactor) RemoveValidatorFromWhitelist(opts *bind.TransactOpts, validator common.Address) (*types.Transaction, error) {
+	return _UniversalVerifier.contract.Transact(opts, "removeValidatorFromWhitelist", validator)
+}
+
+// RemoveValidatorFromWhitelist is a paid mutator transaction binding the contract method 0x617879fe.
+//
+// Solidity: function removeValidatorFromWhitelist(address validator) returns()
+func (_UniversalVerifier *UniversalVerifierSession) RemoveValidatorFromWhitelist(validator common.Address) (*types.Transaction, error) {
+	return _UniversalVerifier.Contract.RemoveValidatorFromWhitelist(&_UniversalVerifier.TransactOpts, validator)
+}
+
+// RemoveValidatorFromWhitelist is a paid mutator transaction binding the contract method 0x617879fe.
+//
+// Solidity: function removeValidatorFromWhitelist(address validator) returns()
+func (_UniversalVerifier *UniversalVerifierTransactorSession) RemoveValidatorFromWhitelist(validator common.Address) (*types.Transaction, error) {
+	return _UniversalVerifier.Contract.RemoveValidatorFromWhitelist(&_UniversalVerifier.TransactOpts, validator)
+}
+
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
@@ -618,6 +878,27 @@ func (_UniversalVerifier *UniversalVerifierSession) RenounceOwnership() (*types.
 // Solidity: function renounceOwnership() returns()
 func (_UniversalVerifier *UniversalVerifierTransactorSession) RenounceOwnership() (*types.Transaction, error) {
 	return _UniversalVerifier.Contract.RenounceOwnership(&_UniversalVerifier.TransactOpts)
+}
+
+// SetRequestOwner is a paid mutator transaction binding the contract method 0xc9c23ea5.
+//
+// Solidity: function setRequestOwner(uint64 requestId, address requestOwner) returns()
+func (_UniversalVerifier *UniversalVerifierTransactor) SetRequestOwner(opts *bind.TransactOpts, requestId uint64, requestOwner common.Address) (*types.Transaction, error) {
+	return _UniversalVerifier.contract.Transact(opts, "setRequestOwner", requestId, requestOwner)
+}
+
+// SetRequestOwner is a paid mutator transaction binding the contract method 0xc9c23ea5.
+//
+// Solidity: function setRequestOwner(uint64 requestId, address requestOwner) returns()
+func (_UniversalVerifier *UniversalVerifierSession) SetRequestOwner(requestId uint64, requestOwner common.Address) (*types.Transaction, error) {
+	return _UniversalVerifier.Contract.SetRequestOwner(&_UniversalVerifier.TransactOpts, requestId, requestOwner)
+}
+
+// SetRequestOwner is a paid mutator transaction binding the contract method 0xc9c23ea5.
+//
+// Solidity: function setRequestOwner(uint64 requestId, address requestOwner) returns()
+func (_UniversalVerifier *UniversalVerifierTransactorSession) SetRequestOwner(requestId uint64, requestOwner common.Address) (*types.Transaction, error) {
+	return _UniversalVerifier.Contract.SetRequestOwner(&_UniversalVerifier.TransactOpts, requestId, requestOwner)
 }
 
 // SetState is a paid mutator transaction binding the contract method 0x34c901af.
@@ -744,6 +1025,27 @@ func (_UniversalVerifier *UniversalVerifierSession) TransferOwnership(newOwner c
 // Solidity: function transferOwnership(address newOwner) returns()
 func (_UniversalVerifier *UniversalVerifierTransactorSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
 	return _UniversalVerifier.Contract.TransferOwnership(&_UniversalVerifier.TransactOpts, newOwner)
+}
+
+// UpdateZKPRequest is a paid mutator transaction binding the contract method 0x011f5bd6.
+//
+// Solidity: function updateZKPRequest(uint64 requestId, (string,address,bytes) request) returns()
+func (_UniversalVerifier *UniversalVerifierTransactor) UpdateZKPRequest(opts *bind.TransactOpts, requestId uint64, request IZKPVerifierZKPRequest) (*types.Transaction, error) {
+	return _UniversalVerifier.contract.Transact(opts, "updateZKPRequest", requestId, request)
+}
+
+// UpdateZKPRequest is a paid mutator transaction binding the contract method 0x011f5bd6.
+//
+// Solidity: function updateZKPRequest(uint64 requestId, (string,address,bytes) request) returns()
+func (_UniversalVerifier *UniversalVerifierSession) UpdateZKPRequest(requestId uint64, request IZKPVerifierZKPRequest) (*types.Transaction, error) {
+	return _UniversalVerifier.Contract.UpdateZKPRequest(&_UniversalVerifier.TransactOpts, requestId, request)
+}
+
+// UpdateZKPRequest is a paid mutator transaction binding the contract method 0x011f5bd6.
+//
+// Solidity: function updateZKPRequest(uint64 requestId, (string,address,bytes) request) returns()
+func (_UniversalVerifier *UniversalVerifierTransactorSession) UpdateZKPRequest(requestId uint64, request IZKPVerifierZKPRequest) (*types.Transaction, error) {
+	return _UniversalVerifier.Contract.UpdateZKPRequest(&_UniversalVerifier.TransactOpts, requestId, request)
 }
 
 // VerifyZKPResponse is a paid mutator transaction binding the contract method 0x5176983b.
@@ -1201,6 +1503,471 @@ func (_UniversalVerifier *UniversalVerifierFilterer) WatchOwnershipTransferred(o
 func (_UniversalVerifier *UniversalVerifierFilterer) ParseOwnershipTransferred(log types.Log) (*UniversalVerifierOwnershipTransferred, error) {
 	event := new(UniversalVerifierOwnershipTransferred)
 	if err := _UniversalVerifier.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// UniversalVerifierZKPRequestSetIterator is returned from FilterZKPRequestSet and is used to iterate over the raw logs and unpacked data for ZKPRequestSet events raised by the UniversalVerifier contract.
+type UniversalVerifierZKPRequestSetIterator struct {
+	Event *UniversalVerifierZKPRequestSet // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *UniversalVerifierZKPRequestSetIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(UniversalVerifierZKPRequestSet)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(UniversalVerifierZKPRequestSet)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *UniversalVerifierZKPRequestSetIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *UniversalVerifierZKPRequestSetIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// UniversalVerifierZKPRequestSet represents a ZKPRequestSet event raised by the UniversalVerifier contract.
+type UniversalVerifierZKPRequestSet struct {
+	RequestId    uint64
+	RequestOwner common.Address
+	Metadata     string
+	Validator    common.Address
+	Data         []byte
+	Raw          types.Log // Blockchain specific contextual infos
+}
+
+// FilterZKPRequestSet is a free log retrieval operation binding the contract event 0x26db2c5d21d517fa8c11af3ae555af7f4a560b9f70a5a32e73e6cd94d0cae3e8.
+//
+// Solidity: event ZKPRequestSet(uint64 indexed requestId, address indexed requestOwner, string metadata, address validator, bytes data)
+func (_UniversalVerifier *UniversalVerifierFilterer) FilterZKPRequestSet(opts *bind.FilterOpts, requestId []uint64, requestOwner []common.Address) (*UniversalVerifierZKPRequestSetIterator, error) {
+
+	var requestIdRule []interface{}
+	for _, requestIdItem := range requestId {
+		requestIdRule = append(requestIdRule, requestIdItem)
+	}
+	var requestOwnerRule []interface{}
+	for _, requestOwnerItem := range requestOwner {
+		requestOwnerRule = append(requestOwnerRule, requestOwnerItem)
+	}
+
+	logs, sub, err := _UniversalVerifier.contract.FilterLogs(opts, "ZKPRequestSet", requestIdRule, requestOwnerRule)
+	if err != nil {
+		return nil, err
+	}
+	return &UniversalVerifierZKPRequestSetIterator{contract: _UniversalVerifier.contract, event: "ZKPRequestSet", logs: logs, sub: sub}, nil
+}
+
+// WatchZKPRequestSet is a free log subscription operation binding the contract event 0x26db2c5d21d517fa8c11af3ae555af7f4a560b9f70a5a32e73e6cd94d0cae3e8.
+//
+// Solidity: event ZKPRequestSet(uint64 indexed requestId, address indexed requestOwner, string metadata, address validator, bytes data)
+func (_UniversalVerifier *UniversalVerifierFilterer) WatchZKPRequestSet(opts *bind.WatchOpts, sink chan<- *UniversalVerifierZKPRequestSet, requestId []uint64, requestOwner []common.Address) (event.Subscription, error) {
+
+	var requestIdRule []interface{}
+	for _, requestIdItem := range requestId {
+		requestIdRule = append(requestIdRule, requestIdItem)
+	}
+	var requestOwnerRule []interface{}
+	for _, requestOwnerItem := range requestOwner {
+		requestOwnerRule = append(requestOwnerRule, requestOwnerItem)
+	}
+
+	logs, sub, err := _UniversalVerifier.contract.WatchLogs(opts, "ZKPRequestSet", requestIdRule, requestOwnerRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(UniversalVerifierZKPRequestSet)
+				if err := _UniversalVerifier.contract.UnpackLog(event, "ZKPRequestSet", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseZKPRequestSet is a log parse operation binding the contract event 0x26db2c5d21d517fa8c11af3ae555af7f4a560b9f70a5a32e73e6cd94d0cae3e8.
+//
+// Solidity: event ZKPRequestSet(uint64 indexed requestId, address indexed requestOwner, string metadata, address validator, bytes data)
+func (_UniversalVerifier *UniversalVerifierFilterer) ParseZKPRequestSet(log types.Log) (*UniversalVerifierZKPRequestSet, error) {
+	event := new(UniversalVerifierZKPRequestSet)
+	if err := _UniversalVerifier.contract.UnpackLog(event, "ZKPRequestSet", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// UniversalVerifierZKPRequestUpdateIterator is returned from FilterZKPRequestUpdate and is used to iterate over the raw logs and unpacked data for ZKPRequestUpdate events raised by the UniversalVerifier contract.
+type UniversalVerifierZKPRequestUpdateIterator struct {
+	Event *UniversalVerifierZKPRequestUpdate // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *UniversalVerifierZKPRequestUpdateIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(UniversalVerifierZKPRequestUpdate)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(UniversalVerifierZKPRequestUpdate)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *UniversalVerifierZKPRequestUpdateIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *UniversalVerifierZKPRequestUpdateIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// UniversalVerifierZKPRequestUpdate represents a ZKPRequestUpdate event raised by the UniversalVerifier contract.
+type UniversalVerifierZKPRequestUpdate struct {
+	RequestId    uint64
+	RequestOwner common.Address
+	Metadata     string
+	Validator    common.Address
+	Data         []byte
+	Raw          types.Log // Blockchain specific contextual infos
+}
+
+// FilterZKPRequestUpdate is a free log retrieval operation binding the contract event 0xa2c61fcbd9637e91178d0dea7f9b5cce13f60c453603b3dc056b8f01bb3d4cb0.
+//
+// Solidity: event ZKPRequestUpdate(uint64 indexed requestId, address indexed requestOwner, string metadata, address validator, bytes data)
+func (_UniversalVerifier *UniversalVerifierFilterer) FilterZKPRequestUpdate(opts *bind.FilterOpts, requestId []uint64, requestOwner []common.Address) (*UniversalVerifierZKPRequestUpdateIterator, error) {
+
+	var requestIdRule []interface{}
+	for _, requestIdItem := range requestId {
+		requestIdRule = append(requestIdRule, requestIdItem)
+	}
+	var requestOwnerRule []interface{}
+	for _, requestOwnerItem := range requestOwner {
+		requestOwnerRule = append(requestOwnerRule, requestOwnerItem)
+	}
+
+	logs, sub, err := _UniversalVerifier.contract.FilterLogs(opts, "ZKPRequestUpdate", requestIdRule, requestOwnerRule)
+	if err != nil {
+		return nil, err
+	}
+	return &UniversalVerifierZKPRequestUpdateIterator{contract: _UniversalVerifier.contract, event: "ZKPRequestUpdate", logs: logs, sub: sub}, nil
+}
+
+// WatchZKPRequestUpdate is a free log subscription operation binding the contract event 0xa2c61fcbd9637e91178d0dea7f9b5cce13f60c453603b3dc056b8f01bb3d4cb0.
+//
+// Solidity: event ZKPRequestUpdate(uint64 indexed requestId, address indexed requestOwner, string metadata, address validator, bytes data)
+func (_UniversalVerifier *UniversalVerifierFilterer) WatchZKPRequestUpdate(opts *bind.WatchOpts, sink chan<- *UniversalVerifierZKPRequestUpdate, requestId []uint64, requestOwner []common.Address) (event.Subscription, error) {
+
+	var requestIdRule []interface{}
+	for _, requestIdItem := range requestId {
+		requestIdRule = append(requestIdRule, requestIdItem)
+	}
+	var requestOwnerRule []interface{}
+	for _, requestOwnerItem := range requestOwner {
+		requestOwnerRule = append(requestOwnerRule, requestOwnerItem)
+	}
+
+	logs, sub, err := _UniversalVerifier.contract.WatchLogs(opts, "ZKPRequestUpdate", requestIdRule, requestOwnerRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(UniversalVerifierZKPRequestUpdate)
+				if err := _UniversalVerifier.contract.UnpackLog(event, "ZKPRequestUpdate", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseZKPRequestUpdate is a log parse operation binding the contract event 0xa2c61fcbd9637e91178d0dea7f9b5cce13f60c453603b3dc056b8f01bb3d4cb0.
+//
+// Solidity: event ZKPRequestUpdate(uint64 indexed requestId, address indexed requestOwner, string metadata, address validator, bytes data)
+func (_UniversalVerifier *UniversalVerifierFilterer) ParseZKPRequestUpdate(log types.Log) (*UniversalVerifierZKPRequestUpdate, error) {
+	event := new(UniversalVerifierZKPRequestUpdate)
+	if err := _UniversalVerifier.contract.UnpackLog(event, "ZKPRequestUpdate", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// UniversalVerifierZKPResponseSubmittedIterator is returned from FilterZKPResponseSubmitted and is used to iterate over the raw logs and unpacked data for ZKPResponseSubmitted events raised by the UniversalVerifier contract.
+type UniversalVerifierZKPResponseSubmittedIterator struct {
+	Event *UniversalVerifierZKPResponseSubmitted // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *UniversalVerifierZKPResponseSubmittedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(UniversalVerifierZKPResponseSubmitted)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(UniversalVerifierZKPResponseSubmitted)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *UniversalVerifierZKPResponseSubmittedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *UniversalVerifierZKPResponseSubmittedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// UniversalVerifierZKPResponseSubmitted represents a ZKPResponseSubmitted event raised by the UniversalVerifier contract.
+type UniversalVerifierZKPResponseSubmitted struct {
+	RequestId uint64
+	Caller    common.Address
+	Raw       types.Log // Blockchain specific contextual infos
+}
+
+// FilterZKPResponseSubmitted is a free log retrieval operation binding the contract event 0x6979bc9c3e552c05dd9859285f1ed7a172e52ef39e1dce9c720e5bf8d82c9f4c.
+//
+// Solidity: event ZKPResponseSubmitted(uint64 indexed requestId, address indexed caller)
+func (_UniversalVerifier *UniversalVerifierFilterer) FilterZKPResponseSubmitted(opts *bind.FilterOpts, requestId []uint64, caller []common.Address) (*UniversalVerifierZKPResponseSubmittedIterator, error) {
+
+	var requestIdRule []interface{}
+	for _, requestIdItem := range requestId {
+		requestIdRule = append(requestIdRule, requestIdItem)
+	}
+	var callerRule []interface{}
+	for _, callerItem := range caller {
+		callerRule = append(callerRule, callerItem)
+	}
+
+	logs, sub, err := _UniversalVerifier.contract.FilterLogs(opts, "ZKPResponseSubmitted", requestIdRule, callerRule)
+	if err != nil {
+		return nil, err
+	}
+	return &UniversalVerifierZKPResponseSubmittedIterator{contract: _UniversalVerifier.contract, event: "ZKPResponseSubmitted", logs: logs, sub: sub}, nil
+}
+
+// WatchZKPResponseSubmitted is a free log subscription operation binding the contract event 0x6979bc9c3e552c05dd9859285f1ed7a172e52ef39e1dce9c720e5bf8d82c9f4c.
+//
+// Solidity: event ZKPResponseSubmitted(uint64 indexed requestId, address indexed caller)
+func (_UniversalVerifier *UniversalVerifierFilterer) WatchZKPResponseSubmitted(opts *bind.WatchOpts, sink chan<- *UniversalVerifierZKPResponseSubmitted, requestId []uint64, caller []common.Address) (event.Subscription, error) {
+
+	var requestIdRule []interface{}
+	for _, requestIdItem := range requestId {
+		requestIdRule = append(requestIdRule, requestIdItem)
+	}
+	var callerRule []interface{}
+	for _, callerItem := range caller {
+		callerRule = append(callerRule, callerItem)
+	}
+
+	logs, sub, err := _UniversalVerifier.contract.WatchLogs(opts, "ZKPResponseSubmitted", requestIdRule, callerRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(UniversalVerifierZKPResponseSubmitted)
+				if err := _UniversalVerifier.contract.UnpackLog(event, "ZKPResponseSubmitted", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseZKPResponseSubmitted is a log parse operation binding the contract event 0x6979bc9c3e552c05dd9859285f1ed7a172e52ef39e1dce9c720e5bf8d82c9f4c.
+//
+// Solidity: event ZKPResponseSubmitted(uint64 indexed requestId, address indexed caller)
+func (_UniversalVerifier *UniversalVerifierFilterer) ParseZKPResponseSubmitted(log types.Log) (*UniversalVerifierZKPResponseSubmitted, error) {
+	event := new(UniversalVerifierZKPResponseSubmitted)
+	if err := _UniversalVerifier.contract.UnpackLog(event, "ZKPResponseSubmitted", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log

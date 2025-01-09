@@ -7,7 +7,7 @@ nocolor='\033[0m'
 
 set -e
 
-SOURCE_ABI_PATH=$PWD/contracts/artifacts/contracts/verifiers/ZKPVerifier.sol
+SOURCE_ABI_PATH=$PWD/contracts/artifacts/contracts/verifiers/UniversalVerifier.sol
 
 # Check if `contracts` repository exists
 if [ ! -d "contracts" ]; then
@@ -39,8 +39,8 @@ npm run compile
 popd > /dev/null
 
 touch $PWD/abi.json $PWD/bytecode $PWD/universal-verifier/v1/go/abi/abi.go
-cat $SOURCE_ABI_PATH/ZKPVerifier.json | jq .abi > $PWD/abi.json
-cat $SOURCE_ABI_PATH/ZKPVerifier.json | jq .bytecode > $PWD/bytecode
+cat $SOURCE_ABI_PATH/UniversalVerifier.json | jq .abi > $PWD/abi.json
+cat $SOURCE_ABI_PATH/UniversalVerifier.json | jq .bytecode > $PWD/bytecode
 
 docker run \
 	-v $PWD/abi.json:/abi.json:ro \
