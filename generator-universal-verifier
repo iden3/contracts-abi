@@ -7,7 +7,7 @@ nocolor='\033[0m'
 
 set -e
 
-SOURCE_ABI_PATH=$PWD/contracts/artifacts/contracts/lib/IdentityBase.sol
+SOURCE_ABI_PATH=$PWD/contracts/artifacts/contracts/verifiers/UniversalVerifier.sol
 
 # Check if `contracts` repository exists
 if [ ! -d "contracts" ]; then
@@ -38,23 +38,18 @@ npm i
 npm run compile
 popd > /dev/null
 
-touch $PWD/abi.json $PWD/bytecode $PWD/identity-base/go/abi/abi.go
-cat $SOURCE_ABI_PATH/IdentityBase.json | jq .abi > $PWD/abi.json
-cat $SOURCE_ABI_PATH/IdentityBase.json | jq .bytecode > $PWD/bytecode
+touch $PWD/abi.json $PWD/bytecode $PWD/universal-verifier/v1/go/abi/abi.go
+cat $SOURCE_ABI_PATH/UniversalVerifier.json | jq .abi > $PWD/abi.json
+cat $SOURCE_ABI_PATH/UniversalVerifier.json | jq .bytecode > $PWD/bytecode
 
 docker run \
 	-v $PWD/abi.json:/abi.json:ro \
 	-v $PWD/bytecode:/bytecode:ro \
-	-v $PWD/identity-base/go/abi/abi.go:/abi.go \
+	-v $PWD/universal-verifier/v1/go/abi/abi.go:/abi.go \
 	--rm --name ethereum-node \
-	ethereum/client-go:alltools-v1.11.5 \
+	ethereum/client-go:alltools-v1.14.12 \
 	abigen --abi=/abi.json --pkg=abi \
-	--out=abi.go --type="IdentityBase"
+	--out=abi.go --type="UniversalVerifier"
 
-# Sync deps
-pushd $PWD/identity-base/go/abi > /dev/null
-go mod tidy
-popd > /dev/null
 
-#TODO(illia-korotia): fill free to add new generators for js, flatter and etc.
 

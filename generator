@@ -20,7 +20,7 @@ which jq 1>/dev/null || exit 1
 
 pushd $PWD/contracts > /dev/null
 
-# Print warnin if current branch is not up to date with the remote branch. Only for master branch.
+# Print warning if current branch is not up to date with the remote branch. Only for master branch.
 current_branch=$(git branch --show-current)
 if [ "$current_branch" == "master" ]; then
 	git fetch
