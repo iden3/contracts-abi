@@ -1,4 +1,4 @@
-module github.com/iden3/contracts-abi/multi-chain-payment/v1/go/abi
+module github.com/iden3/contracts-abi/multi-chain-payment/go/abi
 
 go 1.23.3
 
