@@ -1,6 +1,6 @@
 module github.com/iden3/contracts-abi/multi-chain-payment/go/abi
 
-go 1.23.3
+go 1.22
 
 require github.com/ethereum/go-ethereum v1.14.12
 
