@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Colors
+green='\033[0;32m'
+red='\033[0;31m'
+nocolor='\033[0m'
+
+set -e
+
+SOURCE_ABI_PATH=$PWD/passport-contracts/artifacts/contracts/registry/IdentityRegistryImplV1.sol
+
+# Check if `contracts` repository exists
+if [ ! -d "passport-contracts" ]; then
+	echo -e "${red}Contracts directory does not exist.${nocolor}"
+	exit 1
+fi
+
+# Check if jq exists
+which jq 1>/dev/null || exit 1
+
+pushd $PWD/passport-contracts > /dev/null
+
+# Print warning if current branch is not up to date with the remote branch. Only for master branch.
+current_branch=$(git branch --show-current)
+if [ "$current_branch" == "master" ]; then
+	git fetch
+	if git status -uno | grep "Your branch is up to date" > /dev/null ; then
+		echo -e \
+		"${green}Your branch '$current_branch' is up to date with the remote branch.${nocolor}"
+	else
+		echo -e \
+		"${red}Your branch '$current_branch' is not up to date with the remote branch.\n\
+Please sync your branch with the remote branch.${nocolor}"
+	fi
+fi
+
+npm i
+npm run compile
+popd > /dev/null
+
+touch $PWD/abi.json $PWD/bytecode $PWD/contracts-abi/passport-registry/go/abi/abi.go
+cat $SOURCE_ABI_PATH/IdentityRegistryImplV1.json | jq .abi > $PWD/abi.json
+cat $SOURCE_ABI_PATH/IdentityRegistryImplV1.json | jq .bytecode > $PWD/bytecode
+
+docker run \
+	-v $PWD/abi.json:/abi.json:ro \
+	-v $PWD/bytecode:/bytecode:ro \
+	-v $PWD/contracts-abi/passport-registry/go/abi/abi.go:/abi.go \
+	--rm --name ethereum-node \
+	ethereum/client-go:alltools-v1.11.5 \
+	abigen --abi=/abi.json --pkg=abi \
+	--out=abi.go --type="IdentityRegistryImplV1"
+
+# Sync deps
+pushd $PWD/contracts-abi/passport-registry/go/abi > /dev/null
+go mod tidy
+popd > /dev/null
+
