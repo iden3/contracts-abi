@@ -20,11 +20,18 @@ Before running the `./generator` script, you need to clone the [contracts reposi
 ln -s $PATH_TO_CONTRACTS contracts
 ```
 
-## To run the script, follow these steps
+## To run the script for go generator, follow these steps
 
 ```bash
 ./generator
 ```
+## Generation types for TypeScript
+1. Copy `package.json`, `tsconfig.json` and `.gitignore` from existing project with `js` folder.
+2. Change corresponding name in the `package.json`.
+3. Install dependencies with `npm i`.
+4. Create `src` folder.
+5. Copy abi `.json` in `src` folder from compiled artifacts in `contracts/artifacts` from `iden3/contracts` hardhat project.
+6. Run command `npx typechain --target=ethers-v6 src/<your_abi>.json --out-dir ./src` replacing `<your_abi>` with the correct filename.
 
 ## Method ids
 
@@ -64,8 +71,3 @@ This project is licensed under either of
 
 at your option.
 
-## TODO: genaration types for go and js
-
-1. install ide3/contracts
-2. run something like `typechain --target ethers-v6 --out-dir app/contracts './node_modules/neufund-contracts/build/contracts/*.json'`
-3. think about how to generate types for go
