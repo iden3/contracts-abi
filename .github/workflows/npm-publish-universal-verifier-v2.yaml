@@ -1,0 +1,22 @@
+name: Publish npm onchain universal verifier v2 to NPM
+
+on: workflow_dispatch
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: universal-verifier/v2/js
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+      - run: ls -la
+      - run: npm ci
+      - run: npm run build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.IDENTITY_NPM_PUBLISH_TOKEN}}
+
