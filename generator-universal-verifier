@@ -38,14 +38,14 @@ npm i
 npm run compile
 popd > /dev/null
 
-touch $PWD/abi.json $PWD/bytecode $PWD/universal-verifier/v1/go/abi/abi.go
+touch $PWD/abi.json $PWD/bytecode $PWD/universal-verifier/v2/go/abi/abi.go
 cat $SOURCE_ABI_PATH/UniversalVerifier.json | jq .abi > $PWD/abi.json
 cat $SOURCE_ABI_PATH/UniversalVerifier.json | jq .bytecode > $PWD/bytecode
 
 docker run \
 	-v $PWD/abi.json:/abi.json:ro \
 	-v $PWD/bytecode:/bytecode:ro \
-	-v $PWD/universal-verifier/v1/go/abi/abi.go:/abi.go \
+	-v $PWD/universal-verifier/v2/go/abi/abi.go:/abi.go \
 	--rm --name ethereum-node \
 	ethereum/client-go:alltools-v1.14.12 \
 	abigen --abi=/abi.json --pkg=abi \
