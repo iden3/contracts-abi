@@ -9,6 +9,9 @@
     "dist",
     "src"
   ],
+  "publishConfig": {
+    "access": "public"
+  }
   "scripts": {
     "clean": "rimraf ./dist",
     "build": "npm run clean && npm run build:node",
