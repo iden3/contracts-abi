@@ -115,7 +115,7 @@ export declare namespace IVerifier {
     metadata: string;
     validator: AddressLike;
     params: BytesLike;
-    owner: AddressLike;
+    creator: AddressLike;
   };
 
   export type RequestStructOutput = [
@@ -123,13 +123,13 @@ export declare namespace IVerifier {
     metadata: string,
     validator: string,
     params: string,
-    owner: string
+    creator: string
   ] & {
     requestId: bigint;
     metadata: string;
     validator: string;
     params: string;
-    owner: string;
+    creator: string;
   };
 
   export type AuthResponseStruct = { authMethod: string; proof: BytesLike };
@@ -649,21 +649,21 @@ export namespace OwnershipTransferredEvent {
 export namespace RequestSetEvent {
   export type InputTuple = [
     requestId: BigNumberish,
-    requestOwner: AddressLike,
+    creator: AddressLike,
     metadata: string,
     validator: AddressLike,
     params: BytesLike
   ];
   export type OutputTuple = [
     requestId: bigint,
-    requestOwner: string,
+    creator: string,
     metadata: string,
     validator: string,
     params: string
   ];
   export interface OutputObject {
     requestId: bigint;
-    requestOwner: string;
+    creator: string;
     metadata: string;
     validator: string;
     params: string;
@@ -677,21 +677,21 @@ export namespace RequestSetEvent {
 export namespace RequestUpdateEvent {
   export type InputTuple = [
     requestId: BigNumberish,
-    requestOwner: AddressLike,
+    creator: AddressLike,
     metadata: string,
     validator: AddressLike,
     params: BytesLike
   ];
   export type OutputTuple = [
     requestId: bigint,
-    requestOwner: string,
+    creator: string,
     metadata: string,
     validator: string,
     params: string
   ];
   export interface OutputObject {
     requestId: bigint;
-    requestOwner: string;
+    creator: string;
     metadata: string;
     validator: string;
     params: string;
