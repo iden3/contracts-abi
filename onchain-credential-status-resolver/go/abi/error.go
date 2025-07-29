@@ -1,9 +1,8 @@
 package abi
 
 import (
-	"strings"
-
 	"errors"
+	"strings"
 )
 
 var (
