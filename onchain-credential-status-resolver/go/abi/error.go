@@ -14,6 +14,7 @@ var (
 	msgErrInvalidNodeTypeCustomError   = "InvalidNodeType"
 	msgErrUnsupportedLength            = "Unsupported length"
 	msgErrUnsupportedLengthCustomError = "UnsupportedLength"
+	msgErrInvalidRootsLength           = "Invalid roots length"
 )
 
 var (
@@ -44,5 +45,5 @@ func IsErrInvalidNodeType(err error) bool {
 }
 
 func IsErrUnsupportedLength(err error) bool {
-	return isError(err, msgErrUnsupportedLength) || isError(err, msgErrUnsupportedLengthCustomError)
+	return isError(err, msgErrUnsupportedLength) || isError(err, msgErrUnsupportedLengthCustomError) || isError(err, msgErrInvalidRootsLength)
 }
