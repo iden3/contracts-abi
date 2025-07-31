@@ -37,7 +37,7 @@ func IsErrNodeNotFound(err error) bool {
 }
 
 func IsErrInvalidStateNode(err error) bool {
-	return isError(err, msgErrInvalidStateNode) || isError(err, msgErrInvalidStateNodeCustomError)
+	return isError(err, msgErrInvalidStateNode) || isError(err, msgErrInvalidStateNodeCustomError) || isError(err, msgErrInvalidRootsLength)
 }
 
 func IsErrInvalidNodeType(err error) bool {
@@ -45,5 +45,5 @@ func IsErrInvalidNodeType(err error) bool {
 }
 
 func IsErrUnsupportedLength(err error) bool {
-	return isError(err, msgErrUnsupportedLength) || isError(err, msgErrUnsupportedLengthCustomError) || isError(err, msgErrInvalidRootsLength)
+	return isError(err, msgErrUnsupportedLength) || isError(err, msgErrUnsupportedLengthCustomError)
 }
